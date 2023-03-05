@@ -7,156 +7,34 @@ To reproduce, it might be sufficient to run `cargo build` assuming you have the 
 
 A sample of errors is in [build-output.log](./build-output.log).
 
-The dependency tree looks like:
+The build failures come from the below crates.
+
+- [ ] `rustix-0.36.9`
+- [ ] `socket2-0.4.9` (see https://github.com/rust-lang/socket2/issues/379#issuecomment-1445014220)
+- [ ] `libc-0.2.139` (appears multiple times)
+- [ ] `signal-hook-registry-1.4.1`
+
+The crates are used in:
+
+```
+    ├── env_logger v0.10.0
+    │   ├── is-terminal v0.4.4
+    │   │   └── rustix v0.36.9
+
+    ├── smol v1.3.0
+    │   ├── async-io v1.12.0
+    │   │   ├── socket2 v0.4.9
+
+    ├── smol v1.3.0
+    │   ├── async-process v1.6.0
+    │   │   └── signal-hook v0.3.15
+    │   │       └── signal-hook-registry v1.4.1
+```
+
+The full dependency tree from `matter-rs` is below.
 
 ```
 esp32-c3-matter-minimal v0.1.0 (/home/user/esp32-c3-matter-minimal)
-├── esp-idf-sys v0.32.1
-│   ├── build-time v0.1.2 (proc-macro)
-│   │   ├── chrono v0.4.23
-│   │   │   ├── iana-time-zone v0.1.53
-│   │   │   │   └── core-foundation-sys v0.8.3
-│   │   │   ├── num-integer v0.1.45
-│   │   │   │   └── num-traits v0.2.15
-│   │   │   │       [build-dependencies]
-│   │   │   │       └── autocfg v1.1.0
-│   │   │   │   [build-dependencies]
-│   │   │   │   └── autocfg v1.1.0
-│   │   │   ├── num-traits v0.2.15 (*)
-│   │   │   └── time v0.1.45
-│   │   │       └── libc v0.2.139
-│   │   ├── once_cell v1.17.1
-│   │   ├── proc-macro2 v1.0.51
-│   │   │   └── unicode-ident v1.0.7
-│   │   ├── quote v1.0.23
-│   │   │   └── proc-macro2 v1.0.51 (*)
-│   │   └── syn v1.0.109
-│   │       ├── proc-macro2 v1.0.51 (*)
-│   │       ├── quote v1.0.23 (*)
-│   │       └── unicode-ident v1.0.7
-│   ├── const_format v0.2.30
-│   │   └── const_format_proc_macros v0.2.29 (proc-macro)
-│   │       ├── proc-macro2 v1.0.51 (*)
-│   │       ├── quote v1.0.23 (*)
-│   │       └── unicode-xid v0.2.4
-│   └── libc v0.2.139
-│   [build-dependencies]
-│   ├── anyhow v1.0.69
-│   ├── bindgen v0.63.0
-│   │   ├── bitflags v1.3.2
-│   │   ├── cexpr v0.6.0
-│   │   │   └── nom v7.1.3
-│   │   │       ├── memchr v2.5.0
-│   │   │       └── minimal-lexical v0.2.1
-│   │   ├── clang-sys v1.6.0
-│   │   │   ├── glob v0.3.1
-│   │   │   ├── libc v0.2.139
-│   │   │   └── libloading v0.7.4
-│   │   │       └── cfg-if v1.0.0
-│   │   │   [build-dependencies]
-│   │   │   └── glob v0.3.1
-│   │   ├── lazy_static v1.4.0
-│   │   ├── lazycell v1.3.0
-│   │   ├── log v0.4.17
-│   │   │   └── cfg-if v1.0.0
-│   │   ├── peeking_take_while v0.1.2
-│   │   ├── proc-macro2 v1.0.51 (*)
-│   │   ├── quote v1.0.23 (*)
-│   │   ├── regex v1.7.1
-│   │   │   ├── aho-corasick v0.7.20
-│   │   │   │   └── memchr v2.5.0
-│   │   │   ├── memchr v2.5.0
-│   │   │   └── regex-syntax v0.6.28
-│   │   ├── rustc-hash v1.1.0
-│   │   ├── shlex v1.1.0
-│   │   ├── syn v1.0.109 (*)
-│   │   └── which v4.4.0
-│   │       ├── either v1.8.1
-│   │       └── libc v0.2.139
-│   ├── cargo_metadata v0.15.3
-│   │   ├── camino v1.1.3
-│   │   │   └── serde v1.0.152
-│   │   │       └── serde_derive v1.0.152 (proc-macro)
-│   │   │           ├── proc-macro2 v1.0.51 (*)
-│   │   │           ├── quote v1.0.23 (*)
-│   │   │           └── syn v1.0.109 (*)
-│   │   ├── cargo-platform v0.1.2
-│   │   │   └── serde v1.0.152 (*)
-│   │   ├── semver v1.0.16
-│   │   │   └── serde v1.0.152 (*)
-│   │   ├── serde v1.0.152 (*)
-│   │   ├── serde_json v1.0.93
-│   │   │   ├── itoa v1.0.6
-│   │   │   ├── ryu v1.0.13
-│   │   │   └── serde v1.0.152 (*)
-│   │   └── thiserror v1.0.38
-│   │       └── thiserror-impl v1.0.38 (proc-macro)
-│   │           ├── proc-macro2 v1.0.51 (*)
-│   │           ├── quote v1.0.23 (*)
-│   │           └── syn v1.0.109 (*)
-│   ├── embuild v0.31.0
-│   │   ├── anyhow v1.0.69
-│   │   ├── bindgen v0.63.0 (*)
-│   │   ├── bitflags v1.3.2
-│   │   ├── cmake v0.1.49
-│   │   │   └── cc v1.0.79
-│   │   ├── dirs v4.0.0
-│   │   │   └── dirs-sys v0.3.7
-│   │   │       └── libc v0.2.139
-│   │   ├── filetime v0.2.20
-│   │   │   ├── cfg-if v1.0.0
-│   │   │   └── libc v0.2.139
-│   │   ├── globwalk v0.8.1
-│   │   │   ├── bitflags v1.3.2
-│   │   │   ├── ignore v0.4.20
-│   │   │   │   ├── globset v0.4.10
-│   │   │   │   │   ├── aho-corasick v0.7.20 (*)
-│   │   │   │   │   ├── bstr v1.3.0
-│   │   │   │   │   │   └── memchr v2.5.0
-│   │   │   │   │   ├── fnv v1.0.7
-│   │   │   │   │   ├── log v0.4.17 (*)
-│   │   │   │   │   └── regex v1.7.1 (*)
-│   │   │   │   ├── lazy_static v1.4.0
-│   │   │   │   ├── log v0.4.17 (*)
-│   │   │   │   ├── memchr v2.5.0
-│   │   │   │   ├── regex v1.7.1 (*)
-│   │   │   │   ├── same-file v1.0.6
-│   │   │   │   ├── thread_local v1.1.7
-│   │   │   │   │   ├── cfg-if v1.0.0
-│   │   │   │   │   └── once_cell v1.17.1
-│   │   │   │   └── walkdir v2.3.2
-│   │   │   │       └── same-file v1.0.6
-│   │   │   └── walkdir v2.3.2 (*)
-│   │   ├── log v0.4.17 (*)
-│   │   ├── remove_dir_all v0.7.0
-│   │   │   └── libc v0.2.139
-│   │   ├── serde v1.0.152 (*)
-│   │   ├── serde_json v1.0.93 (*)
-│   │   ├── shlex v1.1.0
-│   │   ├── strum v0.24.1
-│   │   │   └── strum_macros v0.24.3 (proc-macro)
-│   │   │       ├── heck v0.4.1
-│   │   │       ├── proc-macro2 v1.0.51 (*)
-│   │   │       ├── quote v1.0.23 (*)
-│   │   │       ├── rustversion v1.0.11 (proc-macro)
-│   │   │       └── syn v1.0.109 (*)
-│   │   ├── tempfile v3.4.0
-│   │   │   ├── cfg-if v1.0.0
-│   │   │   ├── fastrand v1.9.0
-│   │   │   └── rustix v0.36.9
-│   │   │       ├── bitflags v1.3.2
-│   │   │       ├── errno v0.2.8
-│   │   │       │   └── libc v0.2.139
-│   │   │       ├── io-lifetimes v1.0.5
-│   │   │       │   └── libc v0.2.139
-│   │   │       └── libc v0.2.139
-│   │   ├── thiserror v1.0.38 (*)
-│   │   └── which v4.4.0 (*)
-│   ├── envy v0.4.2
-│   │   └── serde v1.0.152 (*)
-│   ├── regex v1.7.1 (*)
-│   ├── serde v1.0.152 (*)
-│   └── strum v0.24.1 (*)
 └── matter-iot v0.1.0 (https://github.com/project-chip/matter-rs?branch=main#05263e7a)
     ├── async-channel v1.8.0
     │   ├── concurrent-queue v2.1.0
