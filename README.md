@@ -31,6 +31,9 @@ The crates are used in:
     │   │       └── signal-hook-registry v1.4.1
 ```
 
+Replacing `smol` with https://github.com/esp-rs-compat/smol addresses the `socket2`, `libc` and `signal-hook-registry` issues.
+Then it's just `rustix` that's left.
+
 The full dependency tree from `matter-rs` is below.
 
 ```
