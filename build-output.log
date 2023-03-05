@@ -1,0 +1,3477 @@
+warning: unused config key `build.channel` in `/home/user/esp32-c3-matter-minimal/.cargo/config.toml`
+   Compiling socket2 v0.4.9
+   Compiling signal-hook-registry v1.4.1
+   Compiling num-bigint v0.4.3
+   Compiling rustix v0.36.9
+   Compiling typenum v1.16.0
+   Compiling hash32 v0.2.1
+   Compiling rand_chacha v0.3.1
+   Compiling regex v1.7.1
+   Compiling const_format v0.2.30
+   Compiling num-iter v0.1.43
+error[E0432]: unresolved import `libc::siginfo_t`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/signal-hook-registry-1.4.1/src/lib.rs:78:38
+   |
+78 | use libc::{c_int, c_void, sigaction, siginfo_t};
+   |                                      ^^^^^^^^^ no `siginfo_t` in the root
+
+error[E0432]: unresolved import `libc::SOCK_RAW`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.4.9/src/sys/unix.rs:64:16
+   |
+64 | pub(crate) use libc::SOCK_RAW;
+   |                ^^^^^^^^^^^^^^ no `SOCK_RAW` in the root
+
+error[E0432]: unresolved import `libc::SOCK_SEQPACKET`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.4.9/src/sys/unix.rs:66:16
+   |
+66 | pub(crate) use libc::SOCK_SEQPACKET;
+   |                ^^^^^^^^^^^^^^^^^^^^ no `SOCK_SEQPACKET` in the root
+
+error[E0432]: unresolved imports `libc::SIGFPE`, `libc::SIGILL`, `libc::SIGKILL`, `libc::SIGSEGV`, `libc::SIGSTOP`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/signal-hook-registry-1.4.1/src/lib.rs:83:12
+   |
+83 | use libc::{SIGFPE, SIGILL, SIGKILL, SIGSEGV, SIGSTOP};
+   |            ^^^^^^  ^^^^^^  ^^^^^^^  ^^^^^^^  ^^^^^^^ no `SIGSTOP` in the root
+   |            |       |       |        |
+   |            |       |       |        no `SIGSEGV` in the root
+   |            |       |       no `SIGKILL` in the root
+   |            |       no `SIGILL` in the root
+   |            |       help: a similar name exists in the module: `SIGIOT`
+   |            no `SIGFPE` in the root
+
+error[E0432]: unresolved import `libc::IP_HDRINCL`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.4.9/src/sys/unix.rs:81:16
+   |
+81 | pub(crate) use libc::IP_HDRINCL;
+   |                ^^^^^^^^^^^^^^^^ no `IP_HDRINCL` in the root
+
+error[E0432]: unresolved import `libc::IP_RECVTOS`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.4.9/src/sys/unix.rs:93:16
+   |
+93 | pub(crate) use libc::IP_RECVTOS;
+   |                ^^^^^^^^^^^^^^^^ no `IP_RECVTOS` in the root
+
+error[E0432]: unresolved imports `libc::ip_mreq_source`, `libc::IP_ADD_SOURCE_MEMBERSHIP`, `libc::IP_DROP_SOURCE_MEMBERSHIP`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.4.9/src/sys/unix.rs:122:5
+    |
+122 |     ip_mreq_source as IpMreqSource, IP_ADD_SOURCE_MEMBERSHIP, IP_DROP_SOURCE_MEMBERSHIP,
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^^^^^^^^^^ no `IP_DROP_SOURCE_MEMBERSHIP` in the root
+    |     |                               |
+    |     |                               no `IP_ADD_SOURCE_MEMBERSHIP` in the root
+    |     no `ip_mreq_source` in the root
+    |
+help: a similar name exists in the module
+    |
+122 |     ip_mreq_source as IpMreqSource, IP_ADD_MEMBERSHIP, IP_DROP_SOURCE_MEMBERSHIP,
+    |                                     ~~~~~~~~~~~~~~~~~
+help: a similar name exists in the module
+    |
+122 |     ip_mreq_source as IpMreqSource, IP_ADD_SOURCE_MEMBERSHIP, IP_DROP_MEMBERSHIP,
+    |                                                               ~~~~~~~~~~~~~~~~~~
+
+error[E0433]: failed to resolve: use of undeclared type `IovLen`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.4.9/src/sys/unix.rs:811:38
+    |
+811 |     msg.msg_iovlen = min(bufs.len(), IovLen::MAX as usize) as IovLen;
+    |                                      ^^^^^^ use of undeclared type `IovLen`
+
+error[E0433]: failed to resolve: use of undeclared type `IovLen`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.4.9/src/sys/unix.rs:871:38
+    |
+871 |     msg.msg_iovlen = min(bufs.len(), IovLen::MAX as usize) as IovLen;
+    |                                      ^^^^^^ use of undeclared type `IovLen`
+
+error[E0425]: cannot find value `SA_RESTART` in crate `libc`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/signal-hook-registry-1.4.1/src/lib.rs:168:27
+    |
+168 |         let flags = libc::SA_RESTART;
+    |                           ^^^^^^^^^^ not found in `libc`
+
+error[E0425]: cannot find value `SA_SIGINFO` in crate `libc`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/signal-hook-registry-1.4.1/src/lib.rs:171:25
+    |
+171 |         siginfo = libc::SA_SIGINFO as _;
+    |                         ^^^^^^^^^^ not found in `libc`
+
+error[E0425]: cannot find value `SA_SIGINFO` in crate `libc`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/signal-hook-registry-1.4.1/src/lib.rs:252:29
+    |
+252 |             siginfo = libc::SA_SIGINFO as _;
+    |                             ^^^^^^^^^^ not found in `libc`
+
+error[E0432]: unresolved imports `c::WCONTINUED`, `c::WEXITSTATUS`, `c::WIFCONTINUED`, `c::WIFEXITED`, `c::WIFSIGNALED`, `c::WIFSTOPPED`, `c::WNOHANG`, `c::WSTOPSIG`, `c::WTERMSIG`, `c::WUNTRACED`
+ --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/wait.rs:4:5
+  |
+4 |     WCONTINUED, WEXITSTATUS, WIFCONTINUED, WIFEXITED, WIFSIGNALED, WIFSTOPPED, WNOHANG, WSTOPSIG,
+  |     ^^^^^^^^^^  ^^^^^^^^^^^  ^^^^^^^^^^^^  ^^^^^^^^^  ^^^^^^^^^^^  ^^^^^^^^^^  ^^^^^^^  ^^^^^^^^ no `WSTOPSIG` in the root
+  |     |           |            |             |          |            |           |
+  |     |           |            |             |          |            |           no `WNOHANG` in the root
+  |     |           |            |             |          |            no `WIFSTOPPED` in the root
+  |     |           |            |             |          no `WIFSIGNALED` in the root
+  |     |           |            |             no `WIFEXITED` in the root
+  |     |           |            no `WIFCONTINUED` in the root
+  |     |           no `WEXITSTATUS` in the root
+  |     no `WCONTINUED` in the root
+5 |     WTERMSIG, WUNTRACED,
+  |     ^^^^^^^^  ^^^^^^^^^ no `WUNTRACED` in the root
+  |     |
+  |     no `WTERMSIG` in the root
+
+error[E0531]: cannot find unit struct, unit variant or constant `SOCK_RAW` in crate `libc`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.4.9/src/sys/unix.rs:374:11
+    |
+374 |     libc::SOCK_RAW,
+    |           ^^^^^^^^ not found in `libc`
+
+error[E0531]: cannot find unit struct, unit variant or constant `SOCK_RDM` in crate `libc`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.4.9/src/sys/unix.rs:376:11
+    |
+376 |     libc::SOCK_RDM,
+    |           ^^^^^^^^ not found in `libc`
+
+error[E0531]: cannot find unit struct, unit variant or constant `SOCK_SEQPACKET` in crate `libc`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.4.9/src/sys/unix.rs:377:11
+    |
+377 |     libc::SOCK_SEQPACKET,
+    |           ^^^^^^^^^^^^^^ not found in `libc`
+
+error[E0412]: cannot find type `IovLen` in this scope
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.4.9/src/sys/unix.rs:811:63
+    |
+811 |     msg.msg_iovlen = min(bufs.len(), IovLen::MAX as usize) as IovLen;
+    |                                                               ^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `IovLen` in this scope
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.4.9/src/sys/unix.rs:871:63
+    |
+871 |     msg.msg_iovlen = min(bufs.len(), IovLen::MAX as usize) as IovLen;
+    |                                                               ^^^^^^ not found in this scope
+
+error[E0432]: unresolved import `fcntl::fcntl_dupfd_cloexec`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/io/mod.rs:39:9
+   |
+39 | pub use fcntl::fcntl_dupfd_cloexec;
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^ no `fcntl_dupfd_cloexec` in `io::fcntl`
+
+error[E0432]: unresolved import `c::RLIM_INFINITY`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/offset.rs:60:43
+   |
+60 | pub(super) use c::{rlimit as libc_rlimit, RLIM_INFINITY as LIBC_RLIM_INFINITY};
+   |                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no `RLIM_INFINITY` in the root
+
+error[E0412]: cannot find type `ip_mreqn` in crate `libc`
+    --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.4.9/src/sys/unix.rs:1063:12
+     |
+1063 |   ) -> libc::ip_mreqn {
+     |              ^^^^^^^^ help: a struct with a similar name exists: `ip_mreq`
+     |
+    ::: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.139/src/unix/newlib/mod.rs:51:1
+     |
+51   | / s! {
+52   | |     // The order of the `ai_addr` field in this struct is crucial
+53   | |     // for converting between the Rust and C types.
+54   | |     pub struct addrinfo {
+...    |
+228  | |     }
+229  | | }
+     | |_- similarly named struct `ip_mreq` defined here
+
+error[E0422]: cannot find struct, variant or union type `ip_mreqn` in crate `libc`
+    --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.4.9/src/sys/unix.rs:1065:75
+     |
+1065 |           crate::socket::InterfaceIndexOrAddress::Index(interface) => libc::ip_mreqn {
+     |                                                                             ^^^^^^^^ help: a struct with a similar name exists: `ip_mreq`
+     |
+    ::: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.139/src/unix/newlib/mod.rs:51:1
+     |
+51   | / s! {
+52   | |     // The order of the `ai_addr` field in this struct is crucial
+53   | |     // for converting between the Rust and C types.
+54   | |     pub struct addrinfo {
+...    |
+228  | |     }
+229  | | }
+     | |_- similarly named struct `ip_mreq` defined here
+
+error[E0422]: cannot find struct, variant or union type `ip_mreqn` in crate `libc`
+    --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.4.9/src/sys/unix.rs:1070:77
+     |
+1070 |           crate::socket::InterfaceIndexOrAddress::Address(interface) => libc::ip_mreqn {
+     |                                                                               ^^^^^^^^ help: a struct with a similar name exists: `ip_mreq`
+     |
+    ::: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.139/src/unix/newlib/mod.rs:51:1
+     |
+51   | / s! {
+52   | |     // The order of the `ai_addr` field in this struct is crucial
+53   | |     // for converting between the Rust and C types.
+54   | |     pub struct addrinfo {
+...    |
+228  | |     }
+229  | | }
+     | |_- similarly named struct `ip_mreq` defined here
+
+error[E0432]: unresolved imports `c::preadv`, `c::pwritev`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/offset.rs:227:20
+    |
+227 | pub(super) use c::{preadv as libc_preadv, pwritev as libc_pwritev};
+    |                    ^^^^^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^^^^^^^^ no `pwritev` in the root
+    |                    |
+    |                    no `preadv` in the root
+    |
+help: a similar name exists in the module
+    |
+227 | pub(super) use c::{pread as libc_preadv, pwritev as libc_pwritev};
+    |                    ~~~~~
+help: a similar name exists in the module
+    |
+227 | pub(super) use c::{preadv as libc_preadv, pwrite as libc_pwritev};
+    |                                           ~~~~~~
+
+error[E0063]: missing field `sin_len` in initializer of `sockaddr_in`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.4.9/src/sockaddr.rs:225:27
+    |
+225 |         let sockaddr_in = sockaddr_in {
+    |                           ^^^^^^^^^^^ missing `sin_len`
+
+error[E0063]: missing field `sin6_len` in initializer of `sockaddr_in6`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/socket2-0.4.9/src/sockaddr.rs:260:28
+    |
+260 |         let sockaddr_in6 = sockaddr_in6 {
+    |                            ^^^^^^^^^^^^ missing `sin6_len`
+
+error[E0609]: no field `sa_sigaction` on type `sigaction`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/signal-hook-registry-1.4.1/src/lib.rs:162:15
+    |
+162 |         { new.sa_sigaction = handler as usize; }
+    |               ^^^^^^^^^^^^ unknown field
+    |
+    = note: available fields are: `sa_handler`, `sa_mask`, `sa_flags`
+
+error[E0609]: no field `sa_sigaction` on type `sigaction`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/signal-hook-registry-1.4.1/src/lib.rs:239:30
+    |
+239 |         let fptr = self.info.sa_sigaction;
+    |                              ^^^^^^^^^^^^ unknown field
+    |
+    = note: available fields are: `sa_handler`, `sa_mask`, `sa_flags`
+
+Some errors have detailed explanations: E0425, E0432, E0609.
+For more information about an error, try `rustc --explain E0425`.
+error: could not compile `signal-hook-registry` due to 7 previous errors
+warning: build failed, waiting for other jobs to finish...
+Some errors have detailed explanations: E0063, E0412, E0422, E0432, E0433, E0531.
+For more information about an error, try `rustc --explain E0063`.
+error: could not compile `socket2` due to 17 previous errors
+error[E0425]: cannot find value `RTLD_DEFAULT` in crate `libc`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/weak.rs:114:23
+    |
+114 |     libc::dlsym(libc::RTLD_DEFAULT, name.as_ptr().cast())
+    |                       ^^^^^^^^^^^^ not found in `libc`
+
+error[E0425]: cannot find value `EADV` in crate `c`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:39:35
+   |
+39 |     pub const ADV: Self = Self(c::EADV);
+   |                                   ^^^^ not found in `c`
+
+error[E0425]: cannot find value `EBADE` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:69:36
+    |
+69  |     pub const BADE: Self = Self(c::EBADE);
+    |                                    ^^^^^ help: a constant with a similar name exists: `EBADF`
+    |
+   ::: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.139/src/unix/newlib/mod.rs:292:1
+    |
+292 | pub const EBADF: ::c_int = 9;
+    | ------------------------ similarly named constant `EBADF` defined here
+
+error[E0425]: cannot find value `EBADFD` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:85:37
+    |
+85  |     pub const BADFD: Self = Self(c::EBADFD);
+    |                                     ^^^^^^ help: a constant with a similar name exists: `EBADF`
+    |
+   ::: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.139/src/unix/newlib/mod.rs:292:1
+    |
+292 | pub const EBADF: ::c_int = 9;
+    | ------------------------ similarly named constant `EBADF` defined here
+
+error[E0425]: cannot find value `EBADR` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:102:36
+    |
+102 |     pub const BADR: Self = Self(c::EBADR);
+    |                                    ^^^^^ help: a constant with a similar name exists: `EBADF`
+    |
+   ::: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.139/src/unix/newlib/mod.rs:292:1
+    |
+292 | pub const EBADF: ::c_int = 9;
+    | ------------------------ similarly named constant `EBADF` defined here
+
+error[E0425]: cannot find value `EBADRQC` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:126:38
+    |
+126 |     pub const BADRQC: Self = Self(c::EBADRQC);
+    |                                      ^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `EBADSLT` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:140:38
+    |
+140 |     pub const BADSLT: Self = Self(c::EBADSLT);
+    |                                      ^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `EBFONT` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:154:37
+    |
+154 |     pub const BFONT: Self = Self(c::EBFONT);
+    |                                     ^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `ECHRNG` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:178:37
+    |
+178 |     pub const CHRNG: Self = Self(c::ECHRNG);
+    |                                     ^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `ECOMM` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:192:36
+    |
+192 |     pub const COMM: Self = Self(c::ECOMM);
+    |                                    ^^^^^ not found in `c`
+
+error[E0425]: cannot find value `EDEADLOCK` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:216:40
+    |
+216 |     pub const DEADLOCK: Self = Self(c::EDEADLOCK);
+    |                                        ^^^^^^^^^ help: a constant with a similar name exists: `EDEADLK`
+    |
+   ::: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.139/src/unix/newlib/mod.rs:319:1
+    |
+319 | pub const EDEADLK: ::c_int = 45;
+    | -------------------------- similarly named constant `EDEADLK` defined here
+
+error[E0425]: cannot find value `EDOTDOT` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:243:38
+    |
+243 |     pub const DOTDOT: Self = Self(c::EDOTDOT);
+    |                                      ^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `EHWPOISON` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:287:40
+    |
+287 |     pub const HWPOISON: Self = Self(c::EHWPOISON);
+    |                                        ^^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `EISNAM` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:334:37
+    |
+334 |     pub const ISNAM: Self = Self(c::EISNAM);
+    |                                     ^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `EKEYEXPIRED` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:350:42
+    |
+350 |     pub const KEYEXPIRED: Self = Self(c::EKEYEXPIRED);
+    |                                          ^^^^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `EKEYREJECTED` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:366:43
+    |
+366 |     pub const KEYREJECTED: Self = Self(c::EKEYREJECTED);
+    |                                           ^^^^^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `EKEYREVOKED` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:382:42
+    |
+382 |     pub const KEYREVOKED: Self = Self(c::EKEYREVOKED);
+    |                                          ^^^^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `EL2HLT` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:395:37
+    |
+395 |     pub const L2HLT: Self = Self(c::EL2HLT);
+    |                                     ^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `EL2NSYNC` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:408:39
+    |
+408 |     pub const L2NSYNC: Self = Self(c::EL2NSYNC);
+    |                                       ^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `EL3HLT` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:421:37
+    |
+421 |     pub const L3HLT: Self = Self(c::EL3HLT);
+    |                                     ^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `EL3RST` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:434:37
+    |
+434 |     pub const L3RST: Self = Self(c::EL3RST);
+    |                                     ^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `ELIBACC` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:448:38
+    |
+448 |     pub const LIBACC: Self = Self(c::ELIBACC);
+    |                                      ^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `ELIBBAD` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:462:38
+    |
+462 |     pub const LIBBAD: Self = Self(c::ELIBBAD);
+    |                                      ^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `ELIBEXEC` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:476:39
+    |
+476 |     pub const LIBEXEC: Self = Self(c::ELIBEXEC);
+    |                                       ^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `ELIBMAX` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:490:38
+    |
+490 |     pub const LIBMAX: Self = Self(c::ELIBMAX);
+    |                                      ^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `ELIBSCN` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:504:38
+    |
+504 |     pub const LIBSCN: Self = Self(c::ELIBSCN);
+    |                                      ^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `ELNRNG` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:517:37
+    |
+517 |     pub const LNRNG: Self = Self(c::ELNRNG);
+    |                                     ^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `EMEDIUMTYPE` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:535:42
+    |
+535 |     pub const MEDIUMTYPE: Self = Self(c::EMEDIUMTYPE);
+    |                                          ^^^^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `ENAVAIL` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:563:38
+    |
+563 |     pub const NAVAIL: Self = Self(c::ENAVAIL);
+    |                                      ^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `ENOANO` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:596:37
+    |
+596 |     pub const NOANO: Self = Self(c::ENOANO);
+    |                                     ^^^^^^ help: a constant with a similar name exists: `ENOENT`
+    |
+   ::: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.139/src/unix/newlib/mod.rs:285:1
+    |
+285 | pub const ENOENT: ::c_int = 2;
+    | ------------------------- similarly named constant `ENOENT` defined here
+
+error[E0425]: cannot find value `ENOCSI` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:622:37
+    |
+622 |     pub const NOCSI: Self = Self(c::ENOCSI);
+    |                                     ^^^^^^ help: a constant with a similar name exists: `ENOMSG`
+    |
+   ::: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.139/src/unix/newlib/mod.rs:317:1
+    |
+317 | pub const ENOMSG: ::c_int = 35;
+    | ------------------------- similarly named constant `ENOMSG` defined here
+
+error[E0425]: cannot find value `ENOKEY` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:657:37
+    |
+657 |     pub const NOKEY: Self = Self(c::ENOKEY);
+    |                                     ^^^^^^ help: a constant with a similar name exists: `ENODEV`
+    |
+   ::: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.139/src/unix/newlib/mod.rs:301:1
+    |
+301 | pub const ENODEV: ::c_int = 19;
+    | ------------------------- similarly named constant `ENODEV` defined here
+
+error[E0425]: cannot find value `ENOMEDIUM` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:679:40
+    |
+679 |     pub const NOMEDIUM: Self = Self(c::ENOMEDIUM);
+    |                                        ^^^^^^^^^ help: a constant with a similar name exists: `ENOMEM`
+    |
+   ::: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.139/src/unix/newlib/mod.rs:295:1
+    |
+295 | pub const ENOMEM: ::c_int = 12;
+    | ------------------------- similarly named constant `ENOMEM` defined here
+
+error[E0425]: cannot find value `ENONET` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:702:37
+    |
+702 |     pub const NONET: Self = Self(c::ENONET);
+    |                                     ^^^^^^ help: a constant with a similar name exists: `ENOENT`
+    |
+   ::: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.139/src/unix/newlib/mod.rs:285:1
+    |
+285 | pub const ENOENT: ::c_int = 2;
+    | ------------------------- similarly named constant `ENOENT` defined here
+
+error[E0425]: cannot find value `ENOPKG` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:716:37
+    |
+716 |     pub const NOPKG: Self = Self(c::ENOPKG);
+    |                                     ^^^^^^ help: a constant with a similar name exists: `ENOMSG`
+    |
+   ::: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.139/src/unix/newlib/mod.rs:317:1
+    |
+317 | pub const ENOMSG: ::c_int = 35;
+    | ------------------------- similarly named constant `ENOMSG` defined here
+
+error[E0425]: cannot find value `ENOTBLK` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:747:38
+    |
+747 |     pub const NOTBLK: Self = Self(c::ENOTBLK);
+    |                                      ^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `ENOTNAM` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:773:38
+    |
+773 |     pub const NOTNAM: Self = Self(c::ENOTNAM);
+    |                                      ^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `ENOTUNIQ` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:803:39
+    |
+803 |     pub const NOTUNIQ: Self = Self(c::ENOTUNIQ);
+    |                                       ^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `EREMCHG` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:898:38
+    |
+898 |     pub const REMCHG: Self = Self(c::EREMCHG);
+    |                                      ^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `EREMOTE` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:901:38
+    |
+901 |     pub const REMOTE: Self = Self(c::EREMOTE);
+    |                                      ^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `EREMOTEIO` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:917:40
+    |
+917 |     pub const REMOTEIO: Self = Self(c::EREMOTEIO);
+    |                                        ^^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `ERESTART` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:930:39
+    |
+930 |     pub const RESTART: Self = Self(c::ERESTART);
+    |                                       ^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `ERFKILL` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:948:38
+    |
+948 |     pub const RFKILL: Self = Self(c::ERFKILL);
+    |                                      ^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `ESHUTDOWN` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:964:40
+    |
+964 |     pub const SHUTDOWN: Self = Self(c::ESHUTDOWN);
+    |                                        ^^^^^^^^^ help: a constant with a similar name exists: `EHOSTDOWN`
+    |
+   ::: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.139/src/unix/newlib/mod.rs:348:1
+    |
+348 | pub const EHOSTDOWN: ::c_int = 117;
+    | ---------------------------- similarly named constant `EHOSTDOWN` defined here
+
+error[E0425]: cannot find value `ESOCKTNOSUPPORT` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:967:46
+    |
+967 |     pub const SOCKTNOSUPPORT: Self = Self(c::ESOCKTNOSUPPORT);
+    |                                              ^^^^^^^^^^^^^^^ help: a constant with a similar name exists: `EAFNOSUPPORT`
+    |
+   ::: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.139/src/unix/newlib/mod.rs:338:1
+    |
+338 | pub const EAFNOSUPPORT: ::c_int = 106;
+    | ------------------------------- similarly named constant `EAFNOSUPPORT` defined here
+
+error[E0425]: cannot find value `ESRMNT` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:987:37
+    |
+987 |     pub const SRMNT: Self = Self(c::ESRMNT);
+    |                                     ^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `ESTRPIPE` in crate `c`
+    --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:1003:39
+     |
+1003 |     pub const STRPIPE: Self = Self(c::ESTRPIPE);
+     |                                       ^^^^^^^^ help: a constant with a similar name exists: `ESPIPE`
+     |
+    ::: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.139/src/unix/newlib/mod.rs:311:1
+     |
+311  | pub const ESPIPE: ::c_int = 29;
+     | ------------------------- similarly named constant `ESPIPE` defined here
+
+error[E0425]: cannot find value `EUCLEAN` in crate `c`
+    --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:1040:38
+     |
+1040 |     pub const UCLEAN: Self = Self(c::EUCLEAN);
+     |                                      ^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `EUNATCH` in crate `c`
+    --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:1053:38
+     |
+1053 |     pub const UNATCH: Self = Self(c::EUNATCH);
+     |                                      ^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `EUSERS` in crate `c`
+    --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:1056:37
+     |
+1056 |     pub const USERS: Self = Self(c::EUSERS);
+     |                                     ^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `EXFULL` in crate `c`
+    --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/errno.rs:1075:37
+     |
+1075 |     pub const XFULL: Self = Self(c::EXFULL);
+     |                                     ^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `POLLNVAL` in crate `c`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/poll_fd.rs:40:25
+   |
+40 |         const NVAL = c::POLLNVAL;
+   |                         ^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `O_DIRECT` in crate `c`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/types.rs:85:27
+   |
+85 |         const DIRECT = c::O_DIRECT;
+   |                           ^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `PIPE_BUF` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/types.rs:114:32
+    |
+114 | pub const PIPE_BUF: usize = c::PIPE_BUF;
+    |                                ^^^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::io::PIPE_BUF;
+    |
+help: if you import `PIPE_BUF`, refer to it directly
+    |
+114 - pub const PIPE_BUF: usize = c::PIPE_BUF;
+114 + pub const PIPE_BUF: usize = PIPE_BUF;
+    |
+
+error[E0425]: cannot find value `AT_FDCWD` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/types.rs:117:42
+    |
+117 | pub(crate) const AT_FDCWD: c::c_int = c::AT_FDCWD;
+    |                                          ^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find function `readv` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/syscalls.rs:94:24
+    |
+94  |         ret_ssize_t(c::readv(
+    |                        ^^^^^
+    |
+   ::: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.139/src/unix/mod.rs:916:5
+    |
+916 |     pub fn read(fd: ::c_int, buf: *mut ::c_void, count: ::size_t) -> ::ssize_t;
+    |     -------------------------------------------------------------------------- similarly named function `read` defined here
+    |
+help: a function with a similar name exists
+    |
+94  |         ret_ssize_t(c::read(
+    |                        ~~~~
+help: consider importing this function
+    |
+3   | use crate::io::readv;
+    |
+help: if you import `readv`, refer to it directly
+    |
+94  -         ret_ssize_t(c::readv(
+94  +         ret_ssize_t(readv(
+    |
+
+error[E0425]: cannot find function `writev` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/syscalls.rs:105:24
+    |
+105 |         ret_ssize_t(c::writev(
+    |                        ^^^^^^
+    |
+   ::: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.139/src/unix/mod.rs:961:5
+    |
+961 |     pub fn write(fd: ::c_int, buf: *const ::c_void, count: ::size_t) -> ::ssize_t;
+    |     ----------------------------------------------------------------------------- similarly named function `write` defined here
+    |
+help: a function with a similar name exists
+    |
+105 |         ret_ssize_t(c::write(
+    |                        ~~~~~
+help: consider importing this function
+    |
+3   | use crate::io::writev;
+    |
+help: if you import `writev`, refer to it directly
+    |
+105 -         ret_ssize_t(c::writev(
+105 +         ret_ssize_t(writev(
+    |
+
+error[E0425]: cannot find value `FIONREAD` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/syscalls.rs:331:42
+    |
+331 |         ret(c::ioctl(borrowed_fd(fd), c::FIONREAD, nread.as_mut_ptr()))?;
+    |                                          ^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find function `dup3` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/syscalls.rs:434:29
+    |
+434 |         ret_discarded_fd(c::dup3(
+    |                             ^^^^
+    |
+   ::: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.139/src/unix/mod.rs:875:5
+    |
+875 |     pub fn dup(fd: ::c_int) -> ::c_int;
+    |     ---------------------------------- similarly named function `dup` defined here
+    |
+help: a function with a similar name exists
+    |
+434 |         ret_discarded_fd(c::dup(
+    |                             ~~~
+help: consider importing this function
+    |
+3   | use crate::io::dup3;
+    |
+help: if you import `dup3`, refer to it directly
+    |
+434 -         ret_discarded_fd(c::dup3(
+434 +         ret_discarded_fd(dup3(
+    |
+
+error[E0425]: cannot find value `TIOCEXCL` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/syscalls.rs:465:47
+    |
+465 |     unsafe { ret(c::ioctl(borrowed_fd(fd), c::TIOCEXCL as _)) }
+    |                                               ^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `TIOCNXCL` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/syscalls.rs:470:47
+    |
+470 |     unsafe { ret(c::ioctl(borrowed_fd(fd), c::TIOCNXCL as _)) }
+    |                                               ^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find function `pipe2` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/syscalls.rs:493:16
+    |
+493 |         ret(c::pipe2(result.as_mut_ptr().cast::<i32>(), flags.bits()))?;
+    |                ^^^^^ help: a function with a similar name exists: `pipe`
+    |
+   ::: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.139/src/unix/mod.rs:910:5
+    |
+910 |     pub fn pipe(fds: *mut ::c_int) -> ::c_int;
+    |     ----------------------------------------- similarly named function `pipe` defined here
+
+error[E0425]: cannot find function `getpriority` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/syscalls.rs:238:25
+    |
+238 |     let r = unsafe { c::getpriority(c::PRIO_USER, uid.as_raw() as _) };
+    |                         ^^^^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find function `getpriority` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/syscalls.rs:250:25
+    |
+250 |     let r = unsafe { c::getpriority(c::PRIO_PGRP, Pid::as_raw(pgid) as _) };
+    |                         ^^^^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find function `getpriority` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/syscalls.rs:262:25
+    |
+262 |     let r = unsafe { c::getpriority(c::PRIO_PROCESS, Pid::as_raw(pid) as _) };
+    |                         ^^^^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find function `setpriority` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/syscalls.rs:273:21
+    |
+273 |     unsafe { ret(c::setpriority(c::PRIO_USER, uid.as_raw() as _, priority)) }
+    |                     ^^^^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find function `setpriority` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/syscalls.rs:280:16
+    |
+280 |         ret(c::setpriority(
+    |                ^^^^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find function `setpriority` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/syscalls.rs:292:16
+    |
+292 |         ret(c::setpriority(
+    |                ^^^^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `RLIMIT_CPU` in crate `c`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:49:14
+   |
+49 |     Cpu = c::RLIMIT_CPU as c::c_int,
+   |              ^^^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `RLIMIT_FSIZE` in crate `c`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:51:16
+   |
+51 |     Fsize = c::RLIMIT_FSIZE as c::c_int,
+   |                ^^^^^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `RLIMIT_DATA` in crate `c`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:53:15
+   |
+53 |     Data = c::RLIMIT_DATA as c::c_int,
+   |               ^^^^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `RLIMIT_STACK` in crate `c`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:55:16
+   |
+55 |     Stack = c::RLIMIT_STACK as c::c_int,
+   |                ^^^^^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `RLIMIT_CORE` in crate `c`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:58:15
+   |
+58 |     Core = c::RLIMIT_CORE as c::c_int,
+   |               ^^^^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `RLIMIT_RSS` in crate `c`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:67:14
+   |
+67 |     Rss = c::RLIMIT_RSS as c::c_int,
+   |              ^^^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `RLIMIT_NPROC` in crate `c`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:70:16
+   |
+70 |     Nproc = c::RLIMIT_NPROC as c::c_int,
+   |                ^^^^^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `RLIMIT_NOFILE` in crate `c`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:72:17
+   |
+72 |     Nofile = c::RLIMIT_NOFILE as c::c_int,
+   |                 ^^^^^^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `RLIMIT_MEMLOCK` in crate `c`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:80:18
+   |
+80 |     Memlock = c::RLIMIT_MEMLOCK as c::c_int,
+   |                  ^^^^^^^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `RLIMIT_AS` in crate `c`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:83:13
+   |
+83 |     As = c::RLIMIT_AS as c::c_int,
+   |             ^^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `RLIMIT_LOCKS` in crate `c`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:97:16
+   |
+97 |     Locks = c::RLIMIT_LOCKS as c::c_int,
+   |                ^^^^^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `RLIMIT_SIGPENDING` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:111:21
+    |
+111 |     Sigpending = c::RLIMIT_SIGPENDING as c::c_int,
+    |                     ^^^^^^^^^^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `RLIMIT_MSGQUEUE` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:125:19
+    |
+125 |     Msgqueue = c::RLIMIT_MSGQUEUE as c::c_int,
+    |                   ^^^^^^^^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `RLIMIT_NICE` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:139:15
+    |
+139 |     Nice = c::RLIMIT_NICE as c::c_int,
+    |               ^^^^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `RLIMIT_RTPRIO` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:153:17
+    |
+153 |     Rtprio = c::RLIMIT_RTPRIO as c::c_int,
+    |                 ^^^^^^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `RLIMIT_RTTIME` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:169:17
+    |
+169 |     Rttime = c::RLIMIT_RTTIME as c::c_int,
+    |                 ^^^^^^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `SIGHUP` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:190:14
+    |
+190 |     Hup = c::SIGHUP,
+    |              ^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `SIGINT` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:192:14
+    |
+192 |     Int = c::SIGINT,
+    |              ^^^^^^ help: a constant with a similar name exists: `SIGIOT`
+    |
+   ::: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.139/src/unix/mod.rs:240:1
+    |
+240 | pub const SIGIOT: ::c_int = 6;
+    | ------------------------- similarly named constant `SIGIOT` defined here
+
+error[E0425]: cannot find value `SIGQUIT` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:194:15
+    |
+194 |     Quit = c::SIGQUIT,
+    |               ^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `SIGILL` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:196:14
+    |
+196 |     Ill = c::SIGILL,
+    |              ^^^^^^ help: a constant with a similar name exists: `SIGIOT`
+    |
+   ::: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.139/src/unix/mod.rs:240:1
+    |
+240 | pub const SIGIOT: ::c_int = 6;
+    | ------------------------- similarly named constant `SIGIOT` defined here
+
+error[E0425]: cannot find value `SIGTRAP` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:198:15
+    |
+198 |     Trap = c::SIGTRAP,
+    |               ^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `SIGABRT` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:202:16
+    |
+202 |     Abort = c::SIGABRT,
+    |                ^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `SIGBUS` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:204:14
+    |
+204 |     Bus = c::SIGBUS,
+    |              ^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `SIGFPE` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:206:14
+    |
+206 |     Fpe = c::SIGFPE,
+    |              ^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `SIGKILL` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:208:15
+    |
+208 |     Kill = c::SIGKILL,
+    |               ^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `SIGUSR1` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:210:15
+    |
+210 |     Usr1 = c::SIGUSR1,
+    |               ^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `SIGSEGV` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:212:15
+    |
+212 |     Segv = c::SIGSEGV,
+    |               ^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `SIGUSR2` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:214:15
+    |
+214 |     Usr2 = c::SIGUSR2,
+    |               ^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `SIGPIPE` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:216:15
+    |
+216 |     Pipe = c::SIGPIPE,
+    |               ^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `SIGALRM` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:219:16
+    |
+219 |     Alarm = c::SIGALRM,
+    |                ^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `SIGTERM` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:221:15
+    |
+221 |     Term = c::SIGTERM,
+    |               ^^^^^^^ help: a constant with a similar name exists: `SIG_ERR`
+    |
+   ::: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.139/src/unix/mod.rs:214:1
+    |
+214 | pub const SIG_ERR: sighandler_t = !0 as sighandler_t;
+    | ------------------------------- similarly named constant `SIG_ERR` defined here
+
+error[E0425]: cannot find value `SIGSTKFLT` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:244:17
+    |
+244 |     Stkflt = c::SIGSTKFLT,
+    |                 ^^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `SIGCHLD` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:247:16
+    |
+247 |     Child = c::SIGCHLD,
+    |                ^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `SIGCONT` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:249:15
+    |
+249 |     Cont = c::SIGCONT,
+    |               ^^^^^^^ help: a constant with a similar name exists: `SIGIOT`
+    |
+   ::: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.139/src/unix/mod.rs:240:1
+    |
+240 | pub const SIGIOT: ::c_int = 6;
+    | ------------------------- similarly named constant `SIGIOT` defined here
+
+error[E0425]: cannot find value `SIGSTOP` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:251:15
+    |
+251 |     Stop = c::SIGSTOP,
+    |               ^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `SIGTSTP` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:253:15
+    |
+253 |     Tstp = c::SIGTSTP,
+    |               ^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `SIGTTIN` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:255:15
+    |
+255 |     Ttin = c::SIGTTIN,
+    |               ^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `SIGTTOU` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:257:15
+    |
+257 |     Ttou = c::SIGTTOU,
+    |               ^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `SIGURG` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:259:14
+    |
+259 |     Urg = c::SIGURG,
+    |              ^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `SIGXCPU` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:261:15
+    |
+261 |     Xcpu = c::SIGXCPU,
+    |               ^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `SIGXFSZ` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:263:15
+    |
+263 |     Xfsz = c::SIGXFSZ,
+    |               ^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `SIGVTALRM` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:266:18
+    |
+266 |     Vtalarm = c::SIGVTALRM,
+    |                  ^^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `SIGPROF` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:268:15
+    |
+268 |     Prof = c::SIGPROF,
+    |               ^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `SIGWINCH` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:270:16
+    |
+270 |     Winch = c::SIGWINCH,
+    |                ^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `SIGIO` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:274:13
+    |
+274 |     Io = c::SIGIO,
+    |             ^^^^^ help: a constant with a similar name exists: `SIGIOT`
+    |
+   ::: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.139/src/unix/mod.rs:240:1
+    |
+240 | pub const SIGIOT: ::c_int = 6;
+    | ------------------------- similarly named constant `SIGIOT` defined here
+
+error[E0425]: cannot find value `SIGPWR` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:286:16
+    |
+286 |     Power = c::SIGPWR,
+    |                ^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `SIGSYS` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:289:14
+    |
+289 |     Sys = c::SIGSYS,
+    |              ^^^^^^ not found in `c`
+
+error[E0531]: cannot find unit struct, unit variant or constant `SIGHUP` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:297:16
+    |
+297 |             c::SIGHUP => Some(Self::Hup),
+    |                ^^^^^^ not found in `c`
+
+error[E0531]: cannot find unit struct, unit variant or constant `SIGINT` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:298:16
+    |
+298 |             c::SIGINT => Some(Self::Int),
+    |                ^^^^^^ help: a constant with a similar name exists: `SIGIOT`
+    |
+   ::: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.139/src/unix/mod.rs:240:1
+    |
+240 | pub const SIGIOT: ::c_int = 6;
+    | ------------------------- similarly named constant `SIGIOT` defined here
+
+error[E0531]: cannot find unit struct, unit variant or constant `SIGQUIT` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:299:16
+    |
+299 |             c::SIGQUIT => Some(Self::Quit),
+    |                ^^^^^^^ not found in `c`
+
+error[E0531]: cannot find unit struct, unit variant or constant `SIGILL` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:300:16
+    |
+300 |             c::SIGILL => Some(Self::Ill),
+    |                ^^^^^^ help: a constant with a similar name exists: `SIGIOT`
+    |
+   ::: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.139/src/unix/mod.rs:240:1
+    |
+240 | pub const SIGIOT: ::c_int = 6;
+    | ------------------------- similarly named constant `SIGIOT` defined here
+
+error[E0531]: cannot find unit struct, unit variant or constant `SIGTRAP` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:301:16
+    |
+301 |             c::SIGTRAP => Some(Self::Trap),
+    |                ^^^^^^^ not found in `c`
+
+error[E0531]: cannot find unit struct, unit variant or constant `SIGABRT` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:302:16
+    |
+302 |             c::SIGABRT => Some(Self::Abort),
+    |                ^^^^^^^ not found in `c`
+
+error[E0531]: cannot find unit struct, unit variant or constant `SIGBUS` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:303:16
+    |
+303 |             c::SIGBUS => Some(Self::Bus),
+    |                ^^^^^^ not found in `c`
+
+error[E0531]: cannot find unit struct, unit variant or constant `SIGFPE` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:304:16
+    |
+304 |             c::SIGFPE => Some(Self::Fpe),
+    |                ^^^^^^ not found in `c`
+
+error[E0531]: cannot find unit struct, unit variant or constant `SIGKILL` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:305:16
+    |
+305 |             c::SIGKILL => Some(Self::Kill),
+    |                ^^^^^^^ not found in `c`
+
+error[E0531]: cannot find unit struct, unit variant or constant `SIGUSR1` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:306:16
+    |
+306 |             c::SIGUSR1 => Some(Self::Usr1),
+    |                ^^^^^^^ not found in `c`
+
+error[E0531]: cannot find unit struct, unit variant or constant `SIGSEGV` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:307:16
+    |
+307 |             c::SIGSEGV => Some(Self::Segv),
+    |                ^^^^^^^ not found in `c`
+
+error[E0531]: cannot find unit struct, unit variant or constant `SIGUSR2` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:308:16
+    |
+308 |             c::SIGUSR2 => Some(Self::Usr2),
+    |                ^^^^^^^ not found in `c`
+
+error[E0531]: cannot find unit struct, unit variant or constant `SIGPIPE` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:309:16
+    |
+309 |             c::SIGPIPE => Some(Self::Pipe),
+    |                ^^^^^^^ not found in `c`
+
+error[E0531]: cannot find unit struct, unit variant or constant `SIGALRM` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:310:16
+    |
+310 |             c::SIGALRM => Some(Self::Alarm),
+    |                ^^^^^^^ not found in `c`
+
+error[E0531]: cannot find unit struct, unit variant or constant `SIGTERM` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:311:16
+    |
+311 |             c::SIGTERM => Some(Self::Term),
+    |                ^^^^^^^ help: a constant with a similar name exists: `SIG_ERR`
+    |
+   ::: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.139/src/unix/mod.rs:214:1
+    |
+214 | pub const SIG_ERR: sighandler_t = !0 as sighandler_t;
+    | ------------------------------- similarly named constant `SIG_ERR` defined here
+
+error[E0531]: cannot find unit struct, unit variant or constant `SIGSTKFLT` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:333:16
+    |
+333 |             c::SIGSTKFLT => Some(Self::Stkflt),
+    |                ^^^^^^^^^ not found in `c`
+
+error[E0531]: cannot find unit struct, unit variant or constant `SIGCHLD` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:334:16
+    |
+334 |             c::SIGCHLD => Some(Self::Child),
+    |                ^^^^^^^ not found in `c`
+
+error[E0531]: cannot find unit struct, unit variant or constant `SIGCONT` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:335:16
+    |
+335 |             c::SIGCONT => Some(Self::Cont),
+    |                ^^^^^^^ help: a constant with a similar name exists: `SIGIOT`
+    |
+   ::: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.139/src/unix/mod.rs:240:1
+    |
+240 | pub const SIGIOT: ::c_int = 6;
+    | ------------------------- similarly named constant `SIGIOT` defined here
+
+error[E0531]: cannot find unit struct, unit variant or constant `SIGSTOP` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:336:16
+    |
+336 |             c::SIGSTOP => Some(Self::Stop),
+    |                ^^^^^^^ not found in `c`
+
+error[E0531]: cannot find unit struct, unit variant or constant `SIGTSTP` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:337:16
+    |
+337 |             c::SIGTSTP => Some(Self::Tstp),
+    |                ^^^^^^^ not found in `c`
+
+error[E0531]: cannot find unit struct, unit variant or constant `SIGTTIN` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:338:16
+    |
+338 |             c::SIGTTIN => Some(Self::Ttin),
+    |                ^^^^^^^ not found in `c`
+
+error[E0531]: cannot find unit struct, unit variant or constant `SIGTTOU` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:339:16
+    |
+339 |             c::SIGTTOU => Some(Self::Ttou),
+    |                ^^^^^^^ not found in `c`
+
+error[E0531]: cannot find unit struct, unit variant or constant `SIGURG` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:340:16
+    |
+340 |             c::SIGURG => Some(Self::Urg),
+    |                ^^^^^^ not found in `c`
+
+error[E0531]: cannot find unit struct, unit variant or constant `SIGXCPU` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:341:16
+    |
+341 |             c::SIGXCPU => Some(Self::Xcpu),
+    |                ^^^^^^^ not found in `c`
+
+error[E0531]: cannot find unit struct, unit variant or constant `SIGXFSZ` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:342:16
+    |
+342 |             c::SIGXFSZ => Some(Self::Xfsz),
+    |                ^^^^^^^ not found in `c`
+
+error[E0531]: cannot find unit struct, unit variant or constant `SIGVTALRM` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:343:16
+    |
+343 |             c::SIGVTALRM => Some(Self::Vtalarm),
+    |                ^^^^^^^^^ not found in `c`
+
+error[E0531]: cannot find unit struct, unit variant or constant `SIGPROF` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:344:16
+    |
+344 |             c::SIGPROF => Some(Self::Prof),
+    |                ^^^^^^^ not found in `c`
+
+error[E0531]: cannot find unit struct, unit variant or constant `SIGWINCH` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:345:16
+    |
+345 |             c::SIGWINCH => Some(Self::Winch),
+    |                ^^^^^^^^ not found in `c`
+
+error[E0531]: cannot find unit struct, unit variant or constant `SIGIO` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:347:16
+    |
+347 |             c::SIGIO => Some(Self::Io),
+    |                ^^^^^ help: a constant with a similar name exists: `SIGIOT`
+    |
+   ::: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.139/src/unix/mod.rs:240:1
+    |
+240 | pub const SIGIOT: ::c_int = 6;
+    | ------------------------- similarly named constant `SIGIOT` defined here
+
+error[E0531]: cannot find unit struct, unit variant or constant `SIGPWR` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:357:16
+    |
+357 |             c::SIGPWR => Some(Self::Power),
+    |                ^^^^^^ not found in `c`
+
+error[E0531]: cannot find unit struct, unit variant or constant `SIGSYS` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:358:16
+    |
+358 |             c::SIGSYS => Some(Self::Sys),
+    |                ^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `SIGABRT` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/process/types.rs:367:54
+    |
+367 | pub const EXIT_SIGNALED_SIGABRT: c::c_int = 128 + c::SIGABRT;
+    |                                                      ^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `TIOCSWINSZ` in crate `c`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/syscalls.rs:90:47
+   |
+90 |     unsafe { ret(c::ioctl(borrowed_fd(fd), c::TIOCSWINSZ, &winsize)) }
+   |                                               ^^^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `TIOCGWINSZ` in crate `c`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/syscalls.rs:99:16
+   |
+99 |             c::TIOCGWINSZ.into(),
+   |                ^^^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `TCSANOW` in crate `c`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:10:14
+   |
+10 |     Now = c::TCSANOW,
+   |              ^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `TCSADRAIN` in crate `c`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:13:16
+   |
+13 |     Drain = c::TCSADRAIN,
+   |                ^^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `TCSAFLUSH` in crate `c`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:17:16
+   |
+17 |     Flush = c::TCSAFLUSH,
+   |                ^^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `TCIFLUSH` in crate `c`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:27:17
+   |
+27 |     IFlush = c::TCIFLUSH,
+   |                 ^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `TCOFLUSH` in crate `c`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:30:17
+   |
+30 |     OFlush = c::TCOFLUSH,
+   |                 ^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `TCIOFLUSH` in crate `c`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:33:18
+   |
+33 |     IOFlush = c::TCIOFLUSH,
+   |                  ^^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `TCOOFF` in crate `c`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:43:15
+   |
+43 |     OOff = c::TCOOFF,
+   |               ^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `TCOON` in crate `c`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:46:14
+   |
+46 |     OOn = c::TCOON,
+   |              ^^^^^ not found in `c`
+
+error[E0425]: cannot find value `TCIOFF` in crate `c`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:49:15
+   |
+49 |     IOff = c::TCIOFF,
+   |               ^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `TCION` in crate `c`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:52:14
+   |
+52 |     IOn = c::TCION,
+   |              ^^^^^ not found in `c`
+
+error[E0425]: cannot find value `VINTR` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:74:29
+    |
+74  | pub const VINTR: usize = c::VINTR as usize;
+    |                             ^^^^^
+    |
+   ::: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.139/src/unix/newlib/mod.rs:287:1
+    |
+287 | pub const EINTR: ::c_int = 4;
+    | ------------------------ similarly named constant `EINTR` defined here
+    |
+help: a constant with a similar name exists
+    |
+74  | pub const VINTR: usize = c::EINTR as usize;
+    |                             ~~~~~
+help: consider importing this constant
+    |
+1   | use crate::termios::VINTR;
+    |
+help: if you import `VINTR`, refer to it directly
+    |
+74  - pub const VINTR: usize = c::VINTR as usize;
+74  + pub const VINTR: usize = VINTR as usize;
+    |
+
+error[E0425]: cannot find value `VQUIT` in crate `c`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:77:29
+   |
+77 | pub const VQUIT: usize = c::VQUIT as usize;
+   |                             ^^^^^ not found in `c`
+   |
+help: consider importing this constant
+   |
+1  | use crate::termios::VQUIT;
+   |
+help: if you import `VQUIT`, refer to it directly
+   |
+77 - pub const VQUIT: usize = c::VQUIT as usize;
+77 + pub const VQUIT: usize = VQUIT as usize;
+   |
+
+error[E0425]: cannot find value `VERASE` in crate `c`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:80:30
+   |
+80 | pub const VERASE: usize = c::VERASE as usize;
+   |                              ^^^^^^ not found in `c`
+   |
+help: consider importing this constant
+   |
+1  | use crate::termios::VERASE;
+   |
+help: if you import `VERASE`, refer to it directly
+   |
+80 - pub const VERASE: usize = c::VERASE as usize;
+80 + pub const VERASE: usize = VERASE as usize;
+   |
+
+error[E0425]: cannot find value `VKILL` in crate `c`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:83:29
+   |
+83 | pub const VKILL: usize = c::VKILL as usize;
+   |                             ^^^^^ not found in `c`
+   |
+help: consider importing this constant
+   |
+1  | use crate::termios::VKILL;
+   |
+help: if you import `VKILL`, refer to it directly
+   |
+83 - pub const VKILL: usize = c::VKILL as usize;
+83 + pub const VKILL: usize = VKILL as usize;
+   |
+
+error[E0425]: cannot find value `VEOF` in crate `c`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:86:28
+   |
+86 | pub const VEOF: usize = c::VEOF as usize;
+   |                            ^^^^ not found in `c`
+   |
+help: consider importing this constant
+   |
+1  | use crate::termios::VEOF;
+   |
+help: if you import `VEOF`, refer to it directly
+   |
+86 - pub const VEOF: usize = c::VEOF as usize;
+86 + pub const VEOF: usize = VEOF as usize;
+   |
+
+error[E0425]: cannot find value `VTIME` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:89:29
+    |
+89  | pub const VTIME: usize = c::VTIME as usize;
+    |                             ^^^^^
+    |
+   ::: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.139/src/unix/newlib/mod.rs:323:1
+    |
+323 | pub const ETIME: ::c_int = 62;
+    | ------------------------ similarly named constant `ETIME` defined here
+    |
+help: a constant with a similar name exists
+    |
+89  | pub const VTIME: usize = c::ETIME as usize;
+    |                             ~~~~~
+help: consider importing this constant
+    |
+1   | use crate::termios::VTIME;
+    |
+help: if you import `VTIME`, refer to it directly
+    |
+89  - pub const VTIME: usize = c::VTIME as usize;
+89  + pub const VTIME: usize = VTIME as usize;
+    |
+
+error[E0425]: cannot find value `VMIN` in crate `c`
+  --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:92:28
+   |
+92 | pub const VMIN: usize = c::VMIN as usize;
+   |                            ^^^^ not found in `c`
+   |
+help: consider importing this constant
+   |
+1  | use crate::termios::VMIN;
+   |
+help: if you import `VMIN`, refer to it directly
+   |
+92 - pub const VMIN: usize = c::VMIN as usize;
+92 + pub const VMIN: usize = VMIN as usize;
+   |
+
+error[E0425]: cannot find value `VSWTC` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:106:29
+    |
+106 | pub const VSWTC: usize = c::VSWTC as usize;
+    |                             ^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::VSWTC;
+    |
+help: if you import `VSWTC`, refer to it directly
+    |
+106 - pub const VSWTC: usize = c::VSWTC as usize;
+106 + pub const VSWTC: usize = VSWTC as usize;
+    |
+
+error[E0425]: cannot find value `VSTART` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:109:30
+    |
+109 | pub const VSTART: usize = c::VSTART as usize;
+    |                              ^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::VSTART;
+    |
+help: if you import `VSTART`, refer to it directly
+    |
+109 - pub const VSTART: usize = c::VSTART as usize;
+109 + pub const VSTART: usize = VSTART as usize;
+    |
+
+error[E0425]: cannot find value `VSTOP` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:112:29
+    |
+112 | pub const VSTOP: usize = c::VSTOP as usize;
+    |                             ^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::VSTOP;
+    |
+help: if you import `VSTOP`, refer to it directly
+    |
+112 - pub const VSTOP: usize = c::VSTOP as usize;
+112 + pub const VSTOP: usize = VSTOP as usize;
+    |
+
+error[E0425]: cannot find value `VSUSP` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:115:29
+    |
+115 | pub const VSUSP: usize = c::VSUSP as usize;
+    |                             ^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::VSUSP;
+    |
+help: if you import `VSUSP`, refer to it directly
+    |
+115 - pub const VSUSP: usize = c::VSUSP as usize;
+115 + pub const VSUSP: usize = VSUSP as usize;
+    |
+
+error[E0425]: cannot find value `VEOL` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:118:28
+    |
+118 | pub const VEOL: usize = c::VEOL as usize;
+    |                            ^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::VEOL;
+    |
+help: if you import `VEOL`, refer to it directly
+    |
+118 - pub const VEOL: usize = c::VEOL as usize;
+118 + pub const VEOL: usize = VEOL as usize;
+    |
+
+error[E0425]: cannot find value `VREPRINT` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:122:32
+    |
+122 | pub const VREPRINT: usize = c::VREPRINT as usize;
+    |                                ^^^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::VREPRINT;
+    |
+help: if you import `VREPRINT`, refer to it directly
+    |
+122 - pub const VREPRINT: usize = c::VREPRINT as usize;
+122 + pub const VREPRINT: usize = VREPRINT as usize;
+    |
+
+error[E0425]: cannot find value `VDISCARD` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:126:32
+    |
+126 | pub const VDISCARD: usize = c::VDISCARD as usize;
+    |                                ^^^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::VDISCARD;
+    |
+help: if you import `VDISCARD`, refer to it directly
+    |
+126 - pub const VDISCARD: usize = c::VDISCARD as usize;
+126 + pub const VDISCARD: usize = VDISCARD as usize;
+    |
+
+error[E0425]: cannot find value `VWERASE` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:130:31
+    |
+130 | pub const VWERASE: usize = c::VWERASE as usize;
+    |                               ^^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::VWERASE;
+    |
+help: if you import `VWERASE`, refer to it directly
+    |
+130 - pub const VWERASE: usize = c::VWERASE as usize;
+130 + pub const VWERASE: usize = VWERASE as usize;
+    |
+
+error[E0425]: cannot find value `VLNEXT` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:134:30
+    |
+134 | pub const VLNEXT: usize = c::VLNEXT as usize;
+    |                              ^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::VLNEXT;
+    |
+help: if you import `VLNEXT`, refer to it directly
+    |
+134 - pub const VLNEXT: usize = c::VLNEXT as usize;
+134 + pub const VLNEXT: usize = VLNEXT as usize;
+    |
+
+error[E0425]: cannot find value `VEOL2` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:137:29
+    |
+137 | pub const VEOL2: usize = c::VEOL2 as usize;
+    |                             ^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::VEOL2;
+    |
+help: if you import `VEOL2`, refer to it directly
+    |
+137 - pub const VEOL2: usize = c::VEOL2 as usize;
+137 + pub const VEOL2: usize = VEOL2 as usize;
+    |
+
+error[E0425]: cannot find value `IGNBRK` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:141:34
+    |
+141 | pub const IGNBRK: c::c_uint = c::IGNBRK;
+    |                                  ^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::IGNBRK;
+    |
+help: if you import `IGNBRK`, refer to it directly
+    |
+141 - pub const IGNBRK: c::c_uint = c::IGNBRK;
+141 + pub const IGNBRK: c::c_uint = IGNBRK;
+    |
+
+error[E0425]: cannot find value `BRKINT` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:145:34
+    |
+145 | pub const BRKINT: c::c_uint = c::BRKINT;
+    |                                  ^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::BRKINT;
+    |
+help: if you import `BRKINT`, refer to it directly
+    |
+145 - pub const BRKINT: c::c_uint = c::BRKINT;
+145 + pub const BRKINT: c::c_uint = BRKINT;
+    |
+
+error[E0425]: cannot find value `IGNPAR` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:149:34
+    |
+149 | pub const IGNPAR: c::c_uint = c::IGNPAR;
+    |                                  ^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::IGNPAR;
+    |
+help: if you import `IGNPAR`, refer to it directly
+    |
+149 - pub const IGNPAR: c::c_uint = c::IGNPAR;
+149 + pub const IGNPAR: c::c_uint = IGNPAR;
+    |
+
+error[E0425]: cannot find value `PARMRK` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:153:34
+    |
+153 | pub const PARMRK: c::c_uint = c::PARMRK;
+    |                                  ^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::PARMRK;
+    |
+help: if you import `PARMRK`, refer to it directly
+    |
+153 - pub const PARMRK: c::c_uint = c::PARMRK;
+153 + pub const PARMRK: c::c_uint = PARMRK;
+    |
+
+error[E0425]: cannot find value `INPCK` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:157:33
+    |
+157 | pub const INPCK: c::c_uint = c::INPCK;
+    |                                 ^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::INPCK;
+    |
+help: if you import `INPCK`, refer to it directly
+    |
+157 - pub const INPCK: c::c_uint = c::INPCK;
+157 + pub const INPCK: c::c_uint = INPCK;
+    |
+
+error[E0425]: cannot find value `ISTRIP` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:161:34
+    |
+161 | pub const ISTRIP: c::c_uint = c::ISTRIP;
+    |                                  ^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::ISTRIP;
+    |
+help: if you import `ISTRIP`, refer to it directly
+    |
+161 - pub const ISTRIP: c::c_uint = c::ISTRIP;
+161 + pub const ISTRIP: c::c_uint = ISTRIP;
+    |
+
+error[E0425]: cannot find value `INLCR` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:165:33
+    |
+165 | pub const INLCR: c::c_uint = c::INLCR;
+    |                                 ^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::INLCR;
+    |
+help: if you import `INLCR`, refer to it directly
+    |
+165 - pub const INLCR: c::c_uint = c::INLCR;
+165 + pub const INLCR: c::c_uint = INLCR;
+    |
+
+error[E0425]: cannot find value `IGNCR` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:169:33
+    |
+169 | pub const IGNCR: c::c_uint = c::IGNCR;
+    |                                 ^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::IGNCR;
+    |
+help: if you import `IGNCR`, refer to it directly
+    |
+169 - pub const IGNCR: c::c_uint = c::IGNCR;
+169 + pub const IGNCR: c::c_uint = IGNCR;
+    |
+
+error[E0425]: cannot find value `ICRNL` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:173:33
+    |
+173 | pub const ICRNL: c::c_uint = c::ICRNL;
+    |                                 ^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::ICRNL;
+    |
+help: if you import `ICRNL`, refer to it directly
+    |
+173 - pub const ICRNL: c::c_uint = c::ICRNL;
+173 + pub const ICRNL: c::c_uint = ICRNL;
+    |
+
+error[E0425]: cannot find value `IXON` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:181:32
+    |
+181 | pub const IXON: c::c_uint = c::IXON;
+    |                                ^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::IXON;
+    |
+help: if you import `IXON`, refer to it directly
+    |
+181 - pub const IXON: c::c_uint = c::IXON;
+181 + pub const IXON: c::c_uint = IXON;
+    |
+
+error[E0425]: cannot find value `IXANY` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:185:33
+    |
+185 | pub const IXANY: c::c_uint = c::IXANY;
+    |                                 ^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::IXANY;
+    |
+help: if you import `IXANY`, refer to it directly
+    |
+185 - pub const IXANY: c::c_uint = c::IXANY;
+185 + pub const IXANY: c::c_uint = IXANY;
+    |
+
+error[E0425]: cannot find value `IXOFF` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:189:33
+    |
+189 | pub const IXOFF: c::c_uint = c::IXOFF;
+    |                                 ^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::IXOFF;
+    |
+help: if you import `IXOFF`, refer to it directly
+    |
+189 - pub const IXOFF: c::c_uint = c::IXOFF;
+189 + pub const IXOFF: c::c_uint = IXOFF;
+    |
+
+error[E0425]: cannot find value `IMAXBEL` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:198:35
+    |
+198 | pub const IMAXBEL: c::c_uint = c::IMAXBEL;
+    |                                   ^^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::IMAXBEL;
+    |
+help: if you import `IMAXBEL`, refer to it directly
+    |
+198 - pub const IMAXBEL: c::c_uint = c::IMAXBEL;
+198 + pub const IMAXBEL: c::c_uint = IMAXBEL;
+    |
+
+error[E0425]: cannot find value `IUTF8` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:214:33
+    |
+214 | pub const IUTF8: c::c_uint = c::IUTF8;
+    |                                 ^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::IUTF8;
+    |
+help: if you import `IUTF8`, refer to it directly
+    |
+214 - pub const IUTF8: c::c_uint = c::IUTF8;
+214 + pub const IUTF8: c::c_uint = IUTF8;
+    |
+
+error[E0425]: cannot find value `OPOST` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:218:33
+    |
+218 | pub const OPOST: c::c_uint = c::OPOST;
+    |                                 ^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::OPOST;
+    |
+help: if you import `OPOST`, refer to it directly
+    |
+218 - pub const OPOST: c::c_uint = c::OPOST;
+218 + pub const OPOST: c::c_uint = OPOST;
+    |
+
+error[E0425]: cannot find value `OLCUC` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:229:33
+    |
+229 | pub const OLCUC: c::c_uint = c::OLCUC;
+    |                                 ^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::OLCUC;
+    |
+help: if you import `OLCUC`, refer to it directly
+    |
+229 - pub const OLCUC: c::c_uint = c::OLCUC;
+229 + pub const OLCUC: c::c_uint = OLCUC;
+    |
+
+error[E0425]: cannot find value `ONLCR` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:233:33
+    |
+233 | pub const ONLCR: c::c_uint = c::ONLCR;
+    |                                 ^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::ONLCR;
+    |
+help: if you import `ONLCR`, refer to it directly
+    |
+233 - pub const ONLCR: c::c_uint = c::ONLCR;
+233 + pub const ONLCR: c::c_uint = ONLCR;
+    |
+
+error[E0425]: cannot find value `OCRNL` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:237:33
+    |
+237 | pub const OCRNL: c::c_uint = c::OCRNL;
+    |                                 ^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::OCRNL;
+    |
+help: if you import `OCRNL`, refer to it directly
+    |
+237 - pub const OCRNL: c::c_uint = c::OCRNL;
+237 + pub const OCRNL: c::c_uint = OCRNL;
+    |
+
+error[E0425]: cannot find value `ONOCR` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:241:33
+    |
+241 | pub const ONOCR: c::c_uint = c::ONOCR;
+    |                                 ^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::ONOCR;
+    |
+help: if you import `ONOCR`, refer to it directly
+    |
+241 - pub const ONOCR: c::c_uint = c::ONOCR;
+241 + pub const ONOCR: c::c_uint = ONOCR;
+    |
+
+error[E0425]: cannot find value `ONLRET` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:245:34
+    |
+245 | pub const ONLRET: c::c_uint = c::ONLRET;
+    |                                  ^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::ONLRET;
+    |
+help: if you import `ONLRET`, refer to it directly
+    |
+245 - pub const ONLRET: c::c_uint = c::ONLRET;
+245 + pub const ONLRET: c::c_uint = ONLRET;
+    |
+
+error[E0425]: cannot find value `OFILL` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:256:33
+    |
+256 | pub const OFILL: c::c_uint = c::OFILL;
+    |                                 ^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::OFILL;
+    |
+help: if you import `OFILL`, refer to it directly
+    |
+256 - pub const OFILL: c::c_uint = c::OFILL;
+256 + pub const OFILL: c::c_uint = OFILL;
+    |
+
+error[E0425]: cannot find value `OFDEL` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:267:33
+    |
+267 | pub const OFDEL: c::c_uint = c::OFDEL;
+    |                                 ^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::OFDEL;
+    |
+help: if you import `OFDEL`, refer to it directly
+    |
+267 - pub const OFDEL: c::c_uint = c::OFDEL;
+267 + pub const OFDEL: c::c_uint = OFDEL;
+    |
+
+error[E0425]: cannot find value `NLDLY` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:281:33
+    |
+281 | pub const NLDLY: c::c_uint = c::NLDLY;
+    |                                 ^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::NLDLY;
+    |
+help: if you import `NLDLY`, refer to it directly
+    |
+281 - pub const NLDLY: c::c_uint = c::NLDLY;
+281 + pub const NLDLY: c::c_uint = NLDLY;
+    |
+
+error[E0425]: cannot find value `NL0` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:296:31
+    |
+296 | pub const NL0: c::c_uint = c::NL0;
+    |                               ^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::NL0;
+    |
+help: if you import `NL0`, refer to it directly
+    |
+296 - pub const NL0: c::c_uint = c::NL0;
+296 + pub const NL0: c::c_uint = NL0;
+    |
+
+error[E0425]: cannot find value `NL1` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:311:31
+    |
+311 | pub const NL1: c::c_uint = c::NL1;
+    |                               ^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::NL1;
+    |
+help: if you import `NL1`, refer to it directly
+    |
+311 - pub const NL1: c::c_uint = c::NL1;
+311 + pub const NL1: c::c_uint = NL1;
+    |
+
+error[E0425]: cannot find value `CRDLY` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:325:33
+    |
+325 | pub const CRDLY: c::c_uint = c::CRDLY;
+    |                                 ^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::CRDLY;
+    |
+help: if you import `CRDLY`, refer to it directly
+    |
+325 - pub const CRDLY: c::c_uint = c::CRDLY;
+325 + pub const CRDLY: c::c_uint = CRDLY;
+    |
+
+error[E0425]: cannot find value `CR0` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:340:31
+    |
+340 | pub const CR0: c::c_uint = c::CR0;
+    |                               ^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::CR0;
+    |
+help: if you import `CR0`, refer to it directly
+    |
+340 - pub const CR0: c::c_uint = c::CR0;
+340 + pub const CR0: c::c_uint = CR0;
+    |
+
+error[E0425]: cannot find value `CR1` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:357:31
+    |
+357 | pub const CR1: c::c_uint = c::CR1;
+    |                               ^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::CR1;
+    |
+help: if you import `CR1`, refer to it directly
+    |
+357 - pub const CR1: c::c_uint = c::CR1;
+357 + pub const CR1: c::c_uint = CR1;
+    |
+
+error[E0425]: cannot find value `CR2` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:374:31
+    |
+374 | pub const CR2: c::c_uint = c::CR2;
+    |                               ^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::CR2;
+    |
+help: if you import `CR2`, refer to it directly
+    |
+374 - pub const CR2: c::c_uint = c::CR2;
+374 + pub const CR2: c::c_uint = CR2;
+    |
+
+error[E0425]: cannot find value `CR3` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:391:31
+    |
+391 | pub const CR3: c::c_uint = c::CR3;
+    |                               ^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::CR3;
+    |
+help: if you import `CR3`, refer to it directly
+    |
+391 - pub const CR3: c::c_uint = c::CR3;
+391 + pub const CR3: c::c_uint = CR3;
+    |
+
+error[E0425]: cannot find value `TABDLY` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:404:34
+    |
+404 | pub const TABDLY: c::c_uint = c::TABDLY;
+    |                                  ^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::TABDLY;
+    |
+help: if you import `TABDLY`, refer to it directly
+    |
+404 - pub const TABDLY: c::c_uint = c::TABDLY;
+404 + pub const TABDLY: c::c_uint = TABDLY;
+    |
+
+error[E0425]: cannot find value `TAB0` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:418:32
+    |
+418 | pub const TAB0: c::c_uint = c::TAB0;
+    |                                ^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::TAB0;
+    |
+help: if you import `TAB0`, refer to it directly
+    |
+418 - pub const TAB0: c::c_uint = c::TAB0;
+418 + pub const TAB0: c::c_uint = TAB0;
+    |
+
+error[E0425]: cannot find value `TAB1` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:435:32
+    |
+435 | pub const TAB1: c::c_uint = c::TAB1;
+    |                                ^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::TAB1;
+    |
+help: if you import `TAB1`, refer to it directly
+    |
+435 - pub const TAB1: c::c_uint = c::TAB1;
+435 + pub const TAB1: c::c_uint = TAB1;
+    |
+
+error[E0425]: cannot find value `TAB2` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:452:32
+    |
+452 | pub const TAB2: c::c_uint = c::TAB2;
+    |                                ^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::TAB2;
+    |
+help: if you import `TAB2`, refer to it directly
+    |
+452 - pub const TAB2: c::c_uint = c::TAB2;
+452 + pub const TAB2: c::c_uint = TAB2;
+    |
+
+error[E0425]: cannot find value `TAB3` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:468:32
+    |
+468 | pub const TAB3: c::c_uint = c::TAB3;
+    |                                ^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::TAB3;
+    |
+help: if you import `TAB3`, refer to it directly
+    |
+468 - pub const TAB3: c::c_uint = c::TAB3;
+468 + pub const TAB3: c::c_uint = TAB3;
+    |
+
+error[E0425]: cannot find value `BSDLY` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:482:33
+    |
+482 | pub const BSDLY: c::c_uint = c::BSDLY;
+    |                                 ^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::BSDLY;
+    |
+help: if you import `BSDLY`, refer to it directly
+    |
+482 - pub const BSDLY: c::c_uint = c::BSDLY;
+482 + pub const BSDLY: c::c_uint = BSDLY;
+    |
+
+error[E0425]: cannot find value `BS0` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:497:31
+    |
+497 | pub const BS0: c::c_uint = c::BS0;
+    |                               ^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::BS0;
+    |
+help: if you import `BS0`, refer to it directly
+    |
+497 - pub const BS0: c::c_uint = c::BS0;
+497 + pub const BS0: c::c_uint = BS0;
+    |
+
+error[E0425]: cannot find value `BS1` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:514:31
+    |
+514 | pub const BS1: c::c_uint = c::BS1;
+    |                               ^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::BS1;
+    |
+help: if you import `BS1`, refer to it directly
+    |
+514 - pub const BS1: c::c_uint = c::BS1;
+514 + pub const BS1: c::c_uint = BS1;
+    |
+
+error[E0425]: cannot find value `FFDLY` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:529:33
+    |
+529 | pub const FFDLY: c::c_uint = c::FFDLY;
+    |                                 ^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::FFDLY;
+    |
+help: if you import `FFDLY`, refer to it directly
+    |
+529 - pub const FFDLY: c::c_uint = c::FFDLY;
+529 + pub const FFDLY: c::c_uint = FFDLY;
+    |
+
+error[E0425]: cannot find value `FF0` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:544:31
+    |
+544 | pub const FF0: c::c_uint = c::FF0;
+    |                               ^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::FF0;
+    |
+help: if you import `FF0`, refer to it directly
+    |
+544 - pub const FF0: c::c_uint = c::FF0;
+544 + pub const FF0: c::c_uint = FF0;
+    |
+
+error[E0425]: cannot find value `FF1` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:561:31
+    |
+561 | pub const FF1: c::c_uint = c::FF1;
+    |                               ^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::FF1;
+    |
+help: if you import `FF1`, refer to it directly
+    |
+561 - pub const FF1: c::c_uint = c::FF1;
+561 + pub const FF1: c::c_uint = FF1;
+    |
+
+error[E0425]: cannot find value `VTDLY` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:576:33
+    |
+576 | pub const VTDLY: c::c_uint = c::VTDLY;
+    |                                 ^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::VTDLY;
+    |
+help: if you import `VTDLY`, refer to it directly
+    |
+576 - pub const VTDLY: c::c_uint = c::VTDLY;
+576 + pub const VTDLY: c::c_uint = VTDLY;
+    |
+
+error[E0425]: cannot find value `VT0` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:591:31
+    |
+591 | pub const VT0: c::c_uint = c::VT0;
+    |                               ^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::VT0;
+    |
+help: if you import `VT0`, refer to it directly
+    |
+591 - pub const VT0: c::c_uint = c::VT0;
+591 + pub const VT0: c::c_uint = VT0;
+    |
+
+error[E0425]: cannot find value `VT1` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:608:31
+    |
+608 | pub const VT1: c::c_uint = c::VT1;
+    |                               ^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::VT1;
+    |
+help: if you import `VT1`, refer to it directly
+    |
+608 - pub const VT1: c::c_uint = c::VT1;
+608 + pub const VT1: c::c_uint = VT1;
+    |
+
+error[E0425]: cannot find value `B0` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:611:26
+    |
+611 | pub const B0: Speed = c::B0;
+    |                          ^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::B0;
+    |
+help: if you import `B0`, refer to it directly
+    |
+611 - pub const B0: Speed = c::B0;
+611 + pub const B0: Speed = B0;
+    |
+
+error[E0425]: cannot find value `B50` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:614:27
+    |
+614 | pub const B50: Speed = c::B50;
+    |                           ^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::B50;
+    |
+help: if you import `B50`, refer to it directly
+    |
+614 - pub const B50: Speed = c::B50;
+614 + pub const B50: Speed = B50;
+    |
+
+error[E0425]: cannot find value `B75` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:617:27
+    |
+617 | pub const B75: Speed = c::B75;
+    |                           ^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::B75;
+    |
+help: if you import `B75`, refer to it directly
+    |
+617 - pub const B75: Speed = c::B75;
+617 + pub const B75: Speed = B75;
+    |
+
+error[E0425]: cannot find value `B110` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:620:28
+    |
+620 | pub const B110: Speed = c::B110;
+    |                            ^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::B110;
+    |
+help: if you import `B110`, refer to it directly
+    |
+620 - pub const B110: Speed = c::B110;
+620 + pub const B110: Speed = B110;
+    |
+
+error[E0425]: cannot find value `B134` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:623:28
+    |
+623 | pub const B134: Speed = c::B134;
+    |                            ^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::B134;
+    |
+help: if you import `B134`, refer to it directly
+    |
+623 - pub const B134: Speed = c::B134;
+623 + pub const B134: Speed = B134;
+    |
+
+error[E0425]: cannot find value `B150` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:626:28
+    |
+626 | pub const B150: Speed = c::B150;
+    |                            ^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::B150;
+    |
+help: if you import `B150`, refer to it directly
+    |
+626 - pub const B150: Speed = c::B150;
+626 + pub const B150: Speed = B150;
+    |
+
+error[E0425]: cannot find value `B200` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:629:28
+    |
+629 | pub const B200: Speed = c::B200;
+    |                            ^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::B200;
+    |
+help: if you import `B200`, refer to it directly
+    |
+629 - pub const B200: Speed = c::B200;
+629 + pub const B200: Speed = B200;
+    |
+
+error[E0425]: cannot find value `B300` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:632:28
+    |
+632 | pub const B300: Speed = c::B300;
+    |                            ^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::B300;
+    |
+help: if you import `B300`, refer to it directly
+    |
+632 - pub const B300: Speed = c::B300;
+632 + pub const B300: Speed = B300;
+    |
+
+error[E0425]: cannot find value `B600` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:635:28
+    |
+635 | pub const B600: Speed = c::B600;
+    |                            ^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::B600;
+    |
+help: if you import `B600`, refer to it directly
+    |
+635 - pub const B600: Speed = c::B600;
+635 + pub const B600: Speed = B600;
+    |
+
+error[E0425]: cannot find value `B1200` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:638:29
+    |
+638 | pub const B1200: Speed = c::B1200;
+    |                             ^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::B1200;
+    |
+help: if you import `B1200`, refer to it directly
+    |
+638 - pub const B1200: Speed = c::B1200;
+638 + pub const B1200: Speed = B1200;
+    |
+
+error[E0425]: cannot find value `B1800` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:641:29
+    |
+641 | pub const B1800: Speed = c::B1800;
+    |                             ^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::B1800;
+    |
+help: if you import `B1800`, refer to it directly
+    |
+641 - pub const B1800: Speed = c::B1800;
+641 + pub const B1800: Speed = B1800;
+    |
+
+error[E0425]: cannot find value `B2400` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:644:29
+    |
+644 | pub const B2400: Speed = c::B2400;
+    |                             ^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::B2400;
+    |
+help: if you import `B2400`, refer to it directly
+    |
+644 - pub const B2400: Speed = c::B2400;
+644 + pub const B2400: Speed = B2400;
+    |
+
+error[E0425]: cannot find value `B4800` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:647:29
+    |
+647 | pub const B4800: Speed = c::B4800;
+    |                             ^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::B4800;
+    |
+help: if you import `B4800`, refer to it directly
+    |
+647 - pub const B4800: Speed = c::B4800;
+647 + pub const B4800: Speed = B4800;
+    |
+
+error[E0425]: cannot find value `B9600` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:650:29
+    |
+650 | pub const B9600: Speed = c::B9600;
+    |                             ^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::B9600;
+    |
+help: if you import `B9600`, refer to it directly
+    |
+650 - pub const B9600: Speed = c::B9600;
+650 + pub const B9600: Speed = B9600;
+    |
+
+error[E0425]: cannot find value `B19200` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:653:30
+    |
+653 | pub const B19200: Speed = c::B19200;
+    |                              ^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::B19200;
+    |
+help: if you import `B19200`, refer to it directly
+    |
+653 - pub const B19200: Speed = c::B19200;
+653 + pub const B19200: Speed = B19200;
+    |
+
+error[E0425]: cannot find value `B38400` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:656:30
+    |
+656 | pub const B38400: Speed = c::B38400;
+    |                              ^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::B38400;
+    |
+help: if you import `B38400`, refer to it directly
+    |
+656 - pub const B38400: Speed = c::B38400;
+656 + pub const B38400: Speed = B38400;
+    |
+
+error[E0425]: cannot find value `B57600` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:659:30
+    |
+659 | pub const B57600: Speed = c::B57600;
+    |                              ^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::B57600;
+    |
+help: if you import `B57600`, refer to it directly
+    |
+659 - pub const B57600: Speed = c::B57600;
+659 + pub const B57600: Speed = B57600;
+    |
+
+error[E0425]: cannot find value `B115200` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:662:31
+    |
+662 | pub const B115200: Speed = c::B115200;
+    |                               ^^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::B115200;
+    |
+help: if you import `B115200`, refer to it directly
+    |
+662 - pub const B115200: Speed = c::B115200;
+662 + pub const B115200: Speed = B115200;
+    |
+
+error[E0425]: cannot find value `B230400` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:665:31
+    |
+665 | pub const B230400: Speed = c::B230400;
+    |                               ^^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::B230400;
+    |
+help: if you import `B230400`, refer to it directly
+    |
+665 - pub const B230400: Speed = c::B230400;
+665 + pub const B230400: Speed = B230400;
+    |
+
+error[E0425]: cannot find value `B460800` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:675:31
+    |
+675 | pub const B460800: Speed = c::B460800;
+    |                               ^^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::B460800;
+    |
+help: if you import `B460800`, refer to it directly
+    |
+675 - pub const B460800: Speed = c::B460800;
+675 + pub const B460800: Speed = B460800;
+    |
+
+error[E0425]: cannot find value `B500000` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:689:31
+    |
+689 | pub const B500000: Speed = c::B500000;
+    |                               ^^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::B500000;
+    |
+help: if you import `B500000`, refer to it directly
+    |
+689 - pub const B500000: Speed = c::B500000;
+689 + pub const B500000: Speed = B500000;
+    |
+
+error[E0425]: cannot find value `B576000` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:703:31
+    |
+703 | pub const B576000: Speed = c::B576000;
+    |                               ^^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::B576000;
+    |
+help: if you import `B576000`, refer to it directly
+    |
+703 - pub const B576000: Speed = c::B576000;
+703 + pub const B576000: Speed = B576000;
+    |
+
+error[E0425]: cannot find value `B921600` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:713:31
+    |
+713 | pub const B921600: Speed = c::B921600;
+    |                               ^^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::B921600;
+    |
+help: if you import `B921600`, refer to it directly
+    |
+713 - pub const B921600: Speed = c::B921600;
+713 + pub const B921600: Speed = B921600;
+    |
+
+error[E0425]: cannot find value `B1000000` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:726:32
+    |
+726 | pub const B1000000: Speed = c::B1000000;
+    |                                ^^^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::B1000000;
+    |
+help: if you import `B1000000`, refer to it directly
+    |
+726 - pub const B1000000: Speed = c::B1000000;
+726 + pub const B1000000: Speed = B1000000;
+    |
+
+error[E0425]: cannot find value `B1152000` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:739:32
+    |
+739 | pub const B1152000: Speed = c::B1152000;
+    |                                ^^^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::B1152000;
+    |
+help: if you import `B1152000`, refer to it directly
+    |
+739 - pub const B1152000: Speed = c::B1152000;
+739 + pub const B1152000: Speed = B1152000;
+    |
+
+error[E0425]: cannot find value `B1500000` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:752:32
+    |
+752 | pub const B1500000: Speed = c::B1500000;
+    |                                ^^^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::B1500000;
+    |
+help: if you import `B1500000`, refer to it directly
+    |
+752 - pub const B1500000: Speed = c::B1500000;
+752 + pub const B1500000: Speed = B1500000;
+    |
+
+error[E0425]: cannot find value `B2000000` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:765:32
+    |
+765 | pub const B2000000: Speed = c::B2000000;
+    |                                ^^^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::B2000000;
+    |
+help: if you import `B2000000`, refer to it directly
+    |
+765 - pub const B2000000: Speed = c::B2000000;
+765 + pub const B2000000: Speed = B2000000;
+    |
+
+error[E0425]: cannot find value `B2500000` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:780:32
+    |
+780 | pub const B2500000: Speed = c::B2500000;
+    |                                ^^^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::B2500000;
+    |
+help: if you import `B2500000`, refer to it directly
+    |
+780 - pub const B2500000: Speed = c::B2500000;
+780 + pub const B2500000: Speed = B2500000;
+    |
+
+error[E0425]: cannot find value `B3000000` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:795:32
+    |
+795 | pub const B3000000: Speed = c::B3000000;
+    |                                ^^^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::B3000000;
+    |
+help: if you import `B3000000`, refer to it directly
+    |
+795 - pub const B3000000: Speed = c::B3000000;
+795 + pub const B3000000: Speed = B3000000;
+    |
+
+error[E0425]: cannot find value `B3500000` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:810:32
+    |
+810 | pub const B3500000: Speed = c::B3500000;
+    |                                ^^^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::B3500000;
+    |
+help: if you import `B3500000`, refer to it directly
+    |
+810 - pub const B3500000: Speed = c::B3500000;
+810 + pub const B3500000: Speed = B3500000;
+    |
+
+error[E0425]: cannot find value `B4000000` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:825:32
+    |
+825 | pub const B4000000: Speed = c::B4000000;
+    |                                ^^^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::B4000000;
+    |
+help: if you import `B4000000`, refer to it directly
+    |
+825 - pub const B4000000: Speed = c::B4000000;
+825 + pub const B4000000: Speed = B4000000;
+    |
+
+error[E0425]: cannot find value `CSIZE` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:829:33
+    |
+829 | pub const CSIZE: c::c_uint = c::CSIZE;
+    |                                 ^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::CSIZE;
+    |
+help: if you import `CSIZE`, refer to it directly
+    |
+829 - pub const CSIZE: c::c_uint = c::CSIZE;
+829 + pub const CSIZE: c::c_uint = CSIZE;
+    |
+
+error[E0425]: cannot find value `CS5` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:833:31
+    |
+833 | pub const CS5: c::c_uint = c::CS5;
+    |                               ^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::CS5;
+    |
+help: if you import `CS5`, refer to it directly
+    |
+833 - pub const CS5: c::c_uint = c::CS5;
+833 + pub const CS5: c::c_uint = CS5;
+    |
+
+error[E0425]: cannot find value `CS6` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:837:31
+    |
+837 | pub const CS6: c::c_uint = c::CS6;
+    |                               ^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::CS6;
+    |
+help: if you import `CS6`, refer to it directly
+    |
+837 - pub const CS6: c::c_uint = c::CS6;
+837 + pub const CS6: c::c_uint = CS6;
+    |
+
+error[E0425]: cannot find value `CS7` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:841:31
+    |
+841 | pub const CS7: c::c_uint = c::CS7;
+    |                               ^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::CS7;
+    |
+help: if you import `CS7`, refer to it directly
+    |
+841 - pub const CS7: c::c_uint = c::CS7;
+841 + pub const CS7: c::c_uint = CS7;
+    |
+
+error[E0425]: cannot find value `CS8` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:845:31
+    |
+845 | pub const CS8: c::c_uint = c::CS8;
+    |                               ^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::CS8;
+    |
+help: if you import `CS8`, refer to it directly
+    |
+845 - pub const CS8: c::c_uint = c::CS8;
+845 + pub const CS8: c::c_uint = CS8;
+    |
+
+error[E0425]: cannot find value `CSTOPB` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:849:34
+    |
+849 | pub const CSTOPB: c::c_uint = c::CSTOPB;
+    |                                  ^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::CSTOPB;
+    |
+help: if you import `CSTOPB`, refer to it directly
+    |
+849 - pub const CSTOPB: c::c_uint = c::CSTOPB;
+849 + pub const CSTOPB: c::c_uint = CSTOPB;
+    |
+
+error[E0425]: cannot find value `CREAD` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:853:33
+    |
+853 | pub const CREAD: c::c_uint = c::CREAD;
+    |                                 ^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::CREAD;
+    |
+help: if you import `CREAD`, refer to it directly
+    |
+853 - pub const CREAD: c::c_uint = c::CREAD;
+853 + pub const CREAD: c::c_uint = CREAD;
+    |
+
+error[E0425]: cannot find value `PARENB` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:857:34
+    |
+857 | pub const PARENB: c::c_uint = c::PARENB;
+    |                                  ^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::PARENB;
+    |
+help: if you import `PARENB`, refer to it directly
+    |
+857 - pub const PARENB: c::c_uint = c::PARENB;
+857 + pub const PARENB: c::c_uint = PARENB;
+    |
+
+error[E0425]: cannot find value `PARODD` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:861:34
+    |
+861 | pub const PARODD: c::c_uint = c::PARODD;
+    |                                  ^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::PARODD;
+    |
+help: if you import `PARODD`, refer to it directly
+    |
+861 - pub const PARODD: c::c_uint = c::PARODD;
+861 + pub const PARODD: c::c_uint = PARODD;
+    |
+
+error[E0425]: cannot find value `HUPCL` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:865:33
+    |
+865 | pub const HUPCL: c::c_uint = c::HUPCL;
+    |                                 ^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::HUPCL;
+    |
+help: if you import `HUPCL`, refer to it directly
+    |
+865 - pub const HUPCL: c::c_uint = c::HUPCL;
+865 + pub const HUPCL: c::c_uint = HUPCL;
+    |
+
+error[E0425]: cannot find value `CLOCAL` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:869:34
+    |
+869 | pub const CLOCAL: c::c_uint = c::CLOCAL;
+    |                                  ^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::CLOCAL;
+    |
+help: if you import `CLOCAL`, refer to it directly
+    |
+869 - pub const CLOCAL: c::c_uint = c::CLOCAL;
+869 + pub const CLOCAL: c::c_uint = CLOCAL;
+    |
+
+error[E0425]: cannot find value `ISIG` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:873:32
+    |
+873 | pub const ISIG: c::c_uint = c::ISIG;
+    |                                ^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::ISIG;
+    |
+help: if you import `ISIG`, refer to it directly
+    |
+873 - pub const ISIG: c::c_uint = c::ISIG;
+873 + pub const ISIG: c::c_uint = ISIG;
+    |
+
+error[E0425]: cannot find value `ICANON` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:877:31
+    |
+877 | pub const ICANON: Tcflag = c::ICANON;
+    |                               ^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::ICANON;
+    |
+help: if you import `ICANON`, refer to it directly
+    |
+877 - pub const ICANON: Tcflag = c::ICANON;
+877 + pub const ICANON: Tcflag = ICANON;
+    |
+
+error[E0425]: cannot find value `ECHO` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:881:32
+    |
+881 | pub const ECHO: c::c_uint = c::ECHO;
+    |                                ^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::ECHO;
+    |
+help: if you import `ECHO`, refer to it directly
+    |
+881 - pub const ECHO: c::c_uint = c::ECHO;
+881 + pub const ECHO: c::c_uint = ECHO;
+    |
+
+error[E0425]: cannot find value `ECHOE` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:885:33
+    |
+885 | pub const ECHOE: c::c_uint = c::ECHOE;
+    |                                 ^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::ECHOE;
+    |
+help: if you import `ECHOE`, refer to it directly
+    |
+885 - pub const ECHOE: c::c_uint = c::ECHOE;
+885 + pub const ECHOE: c::c_uint = ECHOE;
+    |
+
+error[E0425]: cannot find value `ECHOK` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:889:33
+    |
+889 | pub const ECHOK: c::c_uint = c::ECHOK;
+    |                                 ^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::ECHOK;
+    |
+help: if you import `ECHOK`, refer to it directly
+    |
+889 - pub const ECHOK: c::c_uint = c::ECHOK;
+889 + pub const ECHOK: c::c_uint = ECHOK;
+    |
+
+error[E0425]: cannot find value `ECHONL` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:893:34
+    |
+893 | pub const ECHONL: c::c_uint = c::ECHONL;
+    |                                  ^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::ECHONL;
+    |
+help: if you import `ECHONL`, refer to it directly
+    |
+893 - pub const ECHONL: c::c_uint = c::ECHONL;
+893 + pub const ECHONL: c::c_uint = ECHONL;
+    |
+
+error[E0425]: cannot find value `NOFLSH` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:897:34
+    |
+897 | pub const NOFLSH: c::c_uint = c::NOFLSH;
+    |                                  ^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::NOFLSH;
+    |
+help: if you import `NOFLSH`, refer to it directly
+    |
+897 - pub const NOFLSH: c::c_uint = c::NOFLSH;
+897 + pub const NOFLSH: c::c_uint = NOFLSH;
+    |
+
+error[E0425]: cannot find value `TOSTOP` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:901:34
+    |
+901 | pub const TOSTOP: c::c_uint = c::TOSTOP;
+    |                                  ^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::TOSTOP;
+    |
+help: if you import `TOSTOP`, refer to it directly
+    |
+901 - pub const TOSTOP: c::c_uint = c::TOSTOP;
+901 + pub const TOSTOP: c::c_uint = TOSTOP;
+    |
+
+error[E0425]: cannot find value `IEXTEN` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:905:34
+    |
+905 | pub const IEXTEN: c::c_uint = c::IEXTEN;
+    |                                  ^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::IEXTEN;
+    |
+help: if you import `IEXTEN`, refer to it directly
+    |
+905 - pub const IEXTEN: c::c_uint = c::IEXTEN;
+905 + pub const IEXTEN: c::c_uint = IEXTEN;
+    |
+
+error[E0425]: cannot find value `EXTA` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:917:32
+    |
+917 | pub const EXTA: c::c_uint = c::EXTA;
+    |                                ^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::EXTA;
+    |
+help: if you import `EXTA`, refer to it directly
+    |
+917 - pub const EXTA: c::c_uint = c::EXTA;
+917 + pub const EXTA: c::c_uint = EXTA;
+    |
+
+error[E0425]: cannot find value `EXTB` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:929:32
+    |
+929 | pub const EXTB: c::c_uint = c::EXTB;
+    |                                ^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::EXTB;
+    |
+help: if you import `EXTB`, refer to it directly
+    |
+929 - pub const EXTB: c::c_uint = c::EXTB;
+929 + pub const EXTB: c::c_uint = EXTB;
+    |
+
+error[E0425]: cannot find value `CBAUD` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:942:33
+    |
+942 | pub const CBAUD: c::c_uint = c::CBAUD;
+    |                                 ^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::CBAUD;
+    |
+help: if you import `CBAUD`, refer to it directly
+    |
+942 - pub const CBAUD: c::c_uint = c::CBAUD;
+942 + pub const CBAUD: c::c_uint = CBAUD;
+    |
+
+error[E0425]: cannot find value `CBAUDEX` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:957:35
+    |
+957 | pub const CBAUDEX: c::c_uint = c::CBAUDEX;
+    |                                   ^^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::CBAUDEX;
+    |
+help: if you import `CBAUDEX`, refer to it directly
+    |
+957 - pub const CBAUDEX: c::c_uint = c::CBAUDEX;
+957 + pub const CBAUDEX: c::c_uint = CBAUDEX;
+    |
+
+error[E0425]: cannot find value `CIBAUD` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:973:36
+    |
+973 | pub const CIBAUD: c::tcflag_t = c::CIBAUD;
+    |                                    ^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::CIBAUD;
+    |
+help: if you import `CIBAUD`, refer to it directly
+    |
+973 - pub const CIBAUD: c::tcflag_t = c::CIBAUD;
+973 + pub const CIBAUD: c::tcflag_t = CIBAUD;
+    |
+
+error[E0425]: cannot find value `CMSPAR` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:994:34
+    |
+994 | pub const CMSPAR: c::c_uint = c::CMSPAR;
+    |                                  ^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::CMSPAR;
+    |
+help: if you import `CMSPAR`, refer to it directly
+    |
+994 - pub const CMSPAR: c::c_uint = c::CMSPAR;
+994 + pub const CMSPAR: c::c_uint = CMSPAR;
+    |
+
+error[E0425]: cannot find value `CRTSCTS` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:998:35
+    |
+998 | pub const CRTSCTS: c::c_uint = c::CRTSCTS;
+    |                                   ^^^^^^^ not found in `c`
+    |
+help: consider importing this constant
+    |
+1   | use crate::termios::CRTSCTS;
+    |
+help: if you import `CRTSCTS`, refer to it directly
+    |
+998 - pub const CRTSCTS: c::c_uint = c::CRTSCTS;
+998 + pub const CRTSCTS: c::c_uint = CRTSCTS;
+    |
+
+error[E0425]: cannot find value `ECHOCTL` in crate `c`
+    --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:1006:35
+     |
+1006 | pub const ECHOCTL: c::c_uint = c::ECHOCTL;
+     |                                   ^^^^^^^ not found in `c`
+     |
+help: consider importing this constant
+     |
+1    | use crate::termios::ECHOCTL;
+     |
+help: if you import `ECHOCTL`, refer to it directly
+     |
+1006 - pub const ECHOCTL: c::c_uint = c::ECHOCTL;
+1006 + pub const ECHOCTL: c::c_uint = ECHOCTL;
+     |
+
+error[E0425]: cannot find value `ECHOPRT` in crate `c`
+    --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:1010:35
+     |
+1010 | pub const ECHOPRT: c::c_uint = c::ECHOPRT;
+     |                                   ^^^^^^^ not found in `c`
+     |
+help: consider importing this constant
+     |
+1    | use crate::termios::ECHOPRT;
+     |
+help: if you import `ECHOPRT`, refer to it directly
+     |
+1010 - pub const ECHOPRT: c::c_uint = c::ECHOPRT;
+1010 + pub const ECHOPRT: c::c_uint = ECHOPRT;
+     |
+
+error[E0425]: cannot find value `ECHOKE` in crate `c`
+    --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:1014:34
+     |
+1014 | pub const ECHOKE: c::c_uint = c::ECHOKE;
+     |                                  ^^^^^^ not found in `c`
+     |
+help: consider importing this constant
+     |
+1    | use crate::termios::ECHOKE;
+     |
+help: if you import `ECHOKE`, refer to it directly
+     |
+1014 - pub const ECHOKE: c::c_uint = c::ECHOKE;
+1014 + pub const ECHOKE: c::c_uint = ECHOKE;
+     |
+
+error[E0425]: cannot find value `FLUSHO` in crate `c`
+    --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:1018:34
+     |
+1018 | pub const FLUSHO: c::c_uint = c::FLUSHO;
+     |                                  ^^^^^^ not found in `c`
+     |
+help: consider importing this constant
+     |
+1    | use crate::termios::FLUSHO;
+     |
+help: if you import `FLUSHO`, refer to it directly
+     |
+1018 - pub const FLUSHO: c::c_uint = c::FLUSHO;
+1018 + pub const FLUSHO: c::c_uint = FLUSHO;
+     |
+
+error[E0425]: cannot find value `PENDIN` in crate `c`
+    --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:1022:34
+     |
+1022 | pub const PENDIN: c::c_uint = c::PENDIN;
+     |                                  ^^^^^^ not found in `c`
+     |
+help: consider importing this constant
+     |
+1    | use crate::termios::PENDIN;
+     |
+help: if you import `PENDIN`, refer to it directly
+     |
+1022 - pub const PENDIN: c::c_uint = c::PENDIN;
+1022 + pub const PENDIN: c::c_uint = PENDIN;
+     |
+
+error[E0425]: cannot find value `EXTPROC` in crate `c`
+    --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:1031:35
+     |
+1031 | pub const EXTPROC: c::c_uint = c::EXTPROC;
+     |                                   ^^^^^^^ not found in `c`
+     |
+help: consider importing this constant
+     |
+1    | use crate::termios::EXTPROC;
+     |
+help: if you import `EXTPROC`, refer to it directly
+     |
+1031 - pub const EXTPROC: c::c_uint = c::EXTPROC;
+1031 + pub const EXTPROC: c::c_uint = EXTPROC;
+     |
+
+error[E0425]: cannot find value `XTABS` in crate `c`
+    --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/termios/types.rs:1046:33
+     |
+1046 | pub const XTABS: c::c_uint = c::XTABS;
+     |                                 ^^^^^ not found in `c`
+     |
+help: consider importing this constant
+     |
+1    | use crate::termios::XTABS;
+     |
+help: if you import `XTABS`, refer to it directly
+     |
+1046 - pub const XTABS: c::c_uint = c::XTABS;
+1046 + pub const XTABS: c::c_uint = XTABS;
+     |
+
+error[E0425]: cannot find value `CLOCK_PROCESS_CPUTIME_ID` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/time/types.rs:137:25
+    |
+137 |     ProcessCPUTime = c::CLOCK_PROCESS_CPUTIME_ID,
+    |                         ^^^^^^^^^^^^^^^^^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find value `CLOCK_THREAD_CPUTIME_ID` in crate `c`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/time/types.rs:147:24
+    |
+147 |     ThreadCPUTime = c::CLOCK_THREAD_CPUTIME_ID,
+    |                        ^^^^^^^^^^^^^^^^^^^^^^^ not found in `c`
+
+error[E0425]: cannot find function `fcntl_dupfd` in module `backend::io::syscalls`
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/io/fcntl.rs:84:28
+    |
+84  |     backend::io::syscalls::fcntl_dupfd(fd.as_fd(), min)
+    |                            ^^^^^^^^^^^ help: a function with a similar name exists: `fcntl_getfd`
+    |
+   ::: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/io/syscalls.rs:399:1
+    |
+399 | pub(crate) fn fcntl_getfd(fd: BorrowedFd<'_>) -> io::Result<FdFlags> {
+    | -------------------------------------------------------------------- similarly named function `fcntl_getfd` defined here
+
+error[E0308]: mismatched types
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/time/types.rs:124:16
+    |
+124 |     Realtime = c::CLOCK_REALTIME,
+    |                ^^^^^^^^^^^^^^^^^ expected `i32`, found `u32`
+
+error[E0308]: mismatched types
+   --> /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/rustix-0.36.9/src/backend/libc/time/types.rs:127:17
+    |
+127 |     Monotonic = c::CLOCK_MONOTONIC,
+    |                 ^^^^^^^^^^^^^^^^^^ expected `i32`, found `u32`
+
+Some errors have detailed explanations: E0308, E0425, E0432, E0531.
+For more information about an error, try `rustc --explain E0308`.
+error: could not compile `rustix` due to 294 previous errors
