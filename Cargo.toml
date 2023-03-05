@@ -1,0 +1,25 @@
+[package]
+name = "esp32-c3-matter-minimal"
+version = "0.1.0"
+edition = "2021"
+resolver = "2"
+
+[profile.release]
+opt-level = "s"
+
+[profile.dev]
+debug = true # Symbols are nice and they don't increase the size on Flash
+opt-level = "z"
+
+[features]
+native = ["esp-idf-sys/native"]
+
+[dependencies]
+esp-idf-sys = { version = "0.32", features = ["binstart"] }
+matter-iot = { git = "https://github.com/project-chip/matter-rs", branch = "main", default-features = false, features = ["crypto_esp_mbedtls"] }
+
+# log = "0.4"
+
+[build-dependencies]
+embuild = "0.31"
+anyhow = "1"
