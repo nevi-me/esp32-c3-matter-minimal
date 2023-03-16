@@ -5,9 +5,7 @@ CONFIG_ESP_MAIN_TASK_STACK_SIZE=10000
 # This allows to use 1 ms granuality for thread sleeps (10 ms by default).
 #CONFIG_FREERTOS_HZ=1000
 
-# Workaround for https://github.com/espressif/esp-idf/issues/7631
-#CONFIG_MBEDTLS_CERTIFICATE_BUNDLE=n
-#CONFIG_MBEDTLS_CERTIFICATE_BUNDLE_DEFAULT_FULL=n
-
 # Relates to custom partitions (https://github.com/ollpu/paperslave/commit/62a6cd26985e909e76227e17130f3d74ef2b529b)
 # CONFIG_ESPTOOLPY_FLASHSIZE_16MB=y
+
+CONFIG_ESP_TLS_USING_MBEDTLS=y
