@@ -20,8 +20,8 @@ esp-idf-hal = { version = "0.40" }
 esp-idf-sys = { version = "0.32", features = ["binstart"] }
 esp-idf-svc = "0.45"
 embedded-svc = "0.24"
-matter-iot = { git = "https://github.com/nevi-me/matter-rs", branch = "esp32-c3", default-features = false, features = ["crypto_esp_mbedtls"] }
-# matter-iot = { path = "../matter-rs/matter", default-features = false, features = ["crypto_esp_mbedtls"] }
+matter-iot = { git = "https://github.com/nevi-me/matter-rs", branch = "esp32-c3-kedar-changes", default-features = false, features = ["crypto_esp_mbedtls"] }
+# matter-iot = { path = "../matter-rs/matter", default-features = false, features = ["crypto_rustcrypto"] }
 
 log = "0.4"
 
