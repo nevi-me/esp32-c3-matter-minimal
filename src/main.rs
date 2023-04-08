@@ -14,6 +14,8 @@ use matter::data_model::cluster_on_off::OnOffCluster;
 use matter::data_model::device_types::DEV_TYPE_ON_OFF_LIGHT;
 use matter::secure_channel::spake2p::VerifierData;
 use matter::{core, CommissioningData};
+use smart_leds::{SmartLedsWrite, RGB8};
+use ws2812_esp32_rmt_driver::Ws2812Esp32Rmt;
 
 mod dev_att;
 
@@ -24,6 +26,7 @@ fn main() -> anyhow::Result<()> {
     esp_idf_sys::link_patches();
 
     unsafe {
+        esp_idf_sys::nvs_flash_erase();
         esp_idf_sys::nvs_flash_init();
     }
 
@@ -32,19 +35,31 @@ fn main() -> anyhow::Result<()> {
     let peripherals = Peripherals::take().unwrap();
     let sysloop = EspSystemEventLoop::take()?;
 
-    let _espwifi = start_wifi(peripherals.modem, sysloop.clone(), SSID, PASSWORD);
+    info!("free memory: {}", unsafe {
+        esp_idf_sys::esp_get_free_heap_size()
+    });
+
+    info!("Starting Wi-Fi!");
+    let _espwifi = start_wifi(peripherals.modem, sysloop, SSID, PASSWORD)?;
     info!("Wi-Fi started");
 
     // This is needed for async-io, otherwise we get error:
     // thread 'main' panicked at 'cannot initialize I/O event notification: Kind(Other)
     //https://matrix.to/#/!LdaNPfUfvefOLewEIM:matrix.org/$5V1776lebeE-UMXKFMdej304EGZsXGc7MLecpuAuoYY?via=matrix.org&via=tchncs.de&via=matrix.coredump.ch
     esp_idf_sys::esp!(unsafe {
-        esp_idf_sys::esp_vfs_eventfd_register(&esp_idf_sys::esp_vfs_eventfd_config_t {
-            max_fds: 5,
-            ..Default::default()
-        })
+        esp_idf_sys::esp_vfs_eventfd_register(&esp_idf_sys::esp_vfs_eventfd_config_t { max_fds: 5 })
     })
     .unwrap();
+
+    info!("free memory: {}", unsafe {
+        esp_idf_sys::esp_get_free_heap_size()
+    });
+
+    // Peripherals
+    let mut ws2812 = Ws2812Esp32Rmt::new(0, 8).unwrap();
+    ws2812
+        .write([RGB8 { r: 0, g: 1, b: 1 }].into_iter())
+        .unwrap();
 
     let comm_data = CommissioningData {
         // TODO: Hard-coded for now
@@ -52,15 +67,17 @@ fn main() -> anyhow::Result<()> {
         discriminator: 250,
     };
 
+    info!("Commisinging data");
+
     // vid/pid should match those in the DAC
     let dev_info = BasicInfoConfig {
         vid: 0xFFF1,
-        pid: 0x0011,
-        hw_ver: 1,
+        pid: 0x8000,
+        hw_ver: 2,
         sw_ver: 1,
         sw_ver_str: "1".to_string(),
-        serial_no: "abcdef00".to_string(),
-        device_name: "Matter Device".to_string(),
+        serial_no: "aabbccdd".to_string(),
+        device_name: "OnOff Light".to_string(),
     };
 
     let dev_att = Box::new(dev_att::HardCodedDevAtt::new());
@@ -69,21 +86,42 @@ fn main() -> anyhow::Result<()> {
         core::Matter::new(dev_info, dev_att, comm_data).expect("Unable to start matter");
     let dm = matter.get_data_model();
     {
-        info!("Got data model");
         let mut node = dm.node.write().unwrap();
-        let endpoint = node.add_endpoint(DEV_TYPE_ON_OFF_LIGHT).unwrap();
-        let mut cluster_onoff = OnOffCluster::new().unwrap();
-        let callback_on = Box::new(|| info!("Device is on"));
-        let callback_off = Box::new(|| info!("Device is off"));
-        cluster_onoff.add_callback(
+        let endpoint_shelf1 = node.add_endpoint(DEV_TYPE_ON_OFF_LIGHT).unwrap();
+        let mut shelf1_cluster = OnOffCluster::new().unwrap();
+        let callback_shelf1_on = Box::new(|| {
+            let mut ws2812 = Ws2812Esp32Rmt::new(0, 8).unwrap();
+            ws2812
+                .write(
+                    [RGB8 {
+                        r: 255,
+                        g: 255,
+                        b: 255,
+                    }]
+                    .into_iter(),
+                )
+                .unwrap();
+        });
+        let callback_shelf1_off = Box::new(|| {
+            let mut ws2812 = Ws2812Esp32Rmt::new(0, 8).unwrap();
+            ws2812
+                .write([RGB8 { r: 0, g: 0, b: 0 }].into_iter())
+                .unwrap();
+        });
+        shelf1_cluster.add_callback(
             matter::data_model::cluster_on_off::Commands::On,
-            callback_on,
+            callback_shelf1_on,
         );
-        cluster_onoff.add_callback(
+        shelf1_cluster.add_callback(
             matter::data_model::cluster_on_off::Commands::Off,
-            callback_off,
+            callback_shelf1_off,
         );
-        node.add_cluster(endpoint, cluster_onoff).unwrap();
+        node.add_cluster(endpoint_shelf1, shelf1_cluster).unwrap();
+        println!(
+            "Added OnOff Light Device type at endpoint id: {}",
+            endpoint_shelf1
+        );
+        println!("Data Model now is: {}", node);
     }
 
     println!("free memory: {}", unsafe {
@@ -97,7 +135,7 @@ fn main() -> anyhow::Result<()> {
 /// Start wifi
 ///
 /// TODO: This presumes that the wifi SSID is already known.
-/// The correct approach would be to enter provisioning mode,
+/// The correct approach would be to start Matter, enter provisioning mode,
 /// and then only start wifi after provisioning.
 fn start_wifi(
     modem: impl peripheral::Peripheral<P = esp_idf_hal::modem::Modem> + 'static,

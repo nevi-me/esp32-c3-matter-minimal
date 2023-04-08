@@ -196,6 +196,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d468802bab17cbc0cc575e9b053f41e72aa36bfa6b7f55e3529ffa43161b97fa"
 
 [[package]]
+name = "az"
+version = "1.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7b7e4c2464d97fe331d41de9d5db0def0a96f4d823b8b32a2efd503578988973"
+
+[[package]]
 name = "base16ct"
 version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -300,6 +306,12 @@ name = "bumpalo"
 version = "3.12.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0d261e256854913907f67ed06efbc3338dfe6179796deefc1ff763fc1aee5535"
+
+[[package]]
+name = "bytemuck"
+version = "1.13.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "17febce684fd15d89027105661fec94afb475cb995fbc59d2865198446ba2eea"
 
 [[package]]
 name = "byteorder"
@@ -810,6 +822,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "embedded-graphics-core"
+version = "0.3.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b8b1239db5f3eeb7e33e35bd10bd014e7b2537b17e071f726a09351431337cfa"
+dependencies = [
+ "az",
+ "byteorder",
+]
+
+[[package]]
 name = "embedded-hal"
 version = "0.2.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -861,6 +883,20 @@ dependencies = [
  "serde",
  "strum 0.23.0",
  "strum_macros 0.23.1",
+]
+
+[[package]]
+name = "embuild"
+version = "0.30.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "880ed2a045c218d4c5d57e757991385642b94082e7b216266b127c0b6cadc5ba"
+dependencies = [
+ "anyhow",
+ "bitflags",
+ "filetime",
+ "log",
+ "shlex",
+ "thiserror",
 ]
 
 [[package]]
@@ -960,7 +996,7 @@ dependencies = [
  "embedded-hal 0.2.7",
  "embedded-hal 1.0.0-alpha.9",
  "embedded-hal-nb",
- "embuild",
+ "embuild 0.31.0",
  "esp-idf-sys",
  "heapless",
  "nb 1.1.0",
@@ -974,7 +1010,7 @@ checksum = "f6035126eeaf81d19ca5342fa8f36e85489c6fba1148ec8af167a6b9bff39e0f"
 dependencies = [
  "anyhow",
  "embedded-svc",
- "embuild",
+ "embuild 0.31.0",
  "enumset",
  "esp-idf-hal",
  "esp-idf-sys",
@@ -994,7 +1030,7 @@ dependencies = [
  "build-time",
  "cargo_metadata",
  "const_format",
- "embuild",
+ "embuild 0.31.0",
  "envy",
  "libc",
  "regex",
@@ -1008,12 +1044,15 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "embedded-svc",
- "embuild",
+ "embuild 0.31.0",
  "esp-idf-hal",
  "esp-idf-svc",
  "esp-idf-sys",
  "log",
  "matter-iot",
+ "smart-leds",
+ "smart-leds-trait",
+ "ws2812-esp32-rmt-driver",
 ]
 
 [[package]]
@@ -2065,6 +2104,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "rgb"
+version = "0.8.36"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "20ec2d3e3fc7a92ced357df9cebd5a10b6fb2aa1ee797bf7e9ce2f17dffc8f59"
+dependencies = [
+ "bytemuck",
+]
+
+[[package]]
 name = "rustc-hash"
 version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2239,6 +2287,24 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6528351c9bc8ab22353f9d776db39a20288e8d6c37ef8cfe3317cf875eecfc2d"
 dependencies = [
  "autocfg",
+]
+
+[[package]]
+name = "smart-leds"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "38dd45fa275f70b4110eac5f5182611ad384f88bb22b68b9a9c3cafd7015290b"
+dependencies = [
+ "smart-leds-trait",
+]
+
+[[package]]
+name = "smart-leds-trait"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ebf6d833fa93f16a1c1874e62c2aebe8567e5bdd436d59bf543ed258b6f7a8e3"
+dependencies = [
+ "rgb",
 ]
 
 [[package]]
@@ -2775,6 +2841,21 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ee7b2c67f962bf5042bfd8b6a916178df33a26eec343ae064cb8e069f638fa6f"
 dependencies = [
  "memchr",
+]
+
+[[package]]
+name = "ws2812-esp32-rmt-driver"
+version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d1208b7e7067a133ef425eb51fc914cdc653899bfbe6c2dabe3c2babf387db71"
+dependencies = [
+ "anyhow",
+ "embedded-graphics-core",
+ "embuild 0.30.5",
+ "esp-idf-sys",
+ "once_cell",
+ "smart-leds-trait",
+ "thiserror",
 ]
 
 [[package]]
